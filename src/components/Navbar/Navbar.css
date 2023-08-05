@@ -1,0 +1,78 @@
+.dark-mode {
+  width: auto !important;
+  padding: 5px;
+  background: white;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.light-mode {
+  width: auto !important;
+  padding: 5px;
+  background: #333232;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.light-dark-mode {
+  cursor: pointer;
+}
+.logo {
+  width: auto !important;
+  height: inherit;
+  border-right: 1px solid #262626;
+  padding: 10px 30px;
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #999999;
+  display: flex;
+  flex-flow: column;
+}
+.frontend-engineer {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fafafa;
+}
+li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #999999;
+}
+#number {
+  font-size: 0.7em;
+  margin-right: 10px;
+  color: white;
+}
+.social-handles-nav {
+  width: auto !important;
+  height: auto !important;
+}
+.button-container-nav {
+  width: auto !important;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 3em;
+}
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: auto !important;
+  }
+  li {
+    font-size: 1.5em;
+  }
+}

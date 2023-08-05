@@ -1,0 +1,20 @@
+.line-title {
+  display: flex;
+  gap: 5px;
+  width: auto !important;
+  height: auto !important;
+}
+.line {
+  width: 30px;
+  height: 3px;
+  margin-top: 10px;
+  background: linear-gradient(
+    91.98deg,
+    #f87ea2 -9.89%,
+    #ff9b64 14.53%,
+    #fbf190 44.6%,
+    #cff3a1 68.58%,
+    #a3f7bb 86.27%,
+    #a3f7f2 97.24%
+  );
+}

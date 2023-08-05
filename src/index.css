@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto !important;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: local("PP Neue Montreal"),
+    url("./font/PPNeueMontreal-Regular.ttf") format("truetype");
+}

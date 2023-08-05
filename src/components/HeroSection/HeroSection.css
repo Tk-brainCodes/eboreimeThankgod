@@ -1,0 +1,132 @@
+.hero-section {
+  width: 100vw;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+.text {
+  font-size: 1.5em;
+  color: white;
+  width: auto;
+  height: auto;
+  width: 50vw;
+  height: auto;
+}
+.hero-section img {
+  position: absolute;
+  width: 80vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.sub-text {
+  line-height: 30px;
+  font-size: 0.8em;
+  color: #202022;
+  display: grid;
+  width: 85vw;
+  padding: 40px 30px;
+}
+h1 {
+  font-size: 1.3em;
+}
+.stars {
+  margin-top: 100px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 110%;
+  background: linear-gradient(
+    91.98deg,
+    #f87ea2 -9.89%,
+    #ff9b64 14.53%,
+    #fbf190 44.6%,
+    #cff3a1 68.58%,
+    #a3f7bb 86.27%,
+    #a3f7f2 97.24%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-text {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.2em;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  width: 55vw;
+  /* position: absolute; */
+}
+.social-handles {
+  width: auto !important;
+  height: auto !important;
+  border: 1px solid #262626;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.button-container {
+  width: 150px;
+  height: auto !important;
+  display: block;
+  margin-top: 26em;
+}
+.link-button {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3em;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  width: auto;
+  color: #cccccc;
+  display: flex;
+  gap: 3px;
+}
+@media only screen and (max-width: 768px) {
+  .hero-text {
+    font-size: 2.2em;
+    position: none;
+  }
+  .hero-section img {
+    display: none;
+  }
+  .social-handles {
+    width: auto !important;
+    height: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+  .button-container {
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin: 0;
+  }
+  .hero-section {
+    display: block;
+    position: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hero-text {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,80 @@
+.works {
+  width: 100vw;
+  height: auto !important;
+}
+.work-heading {
+  padding: 40px 30px;
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #999999;
+}
+.work-cards {
+  display: flex;
+  width: 100vw;
+  height: auto !important;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 40px 50px;
+}
+.project-container {
+  border: 1px solid #262626;
+  border-radius: 4px;
+  width: 350px;
+  height: auto !important;
+  padding: 20px 20px;
+}
+.project-title {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  color: #fafafa;
+  margin-bottom: 20px;
+}
+.project-description {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.05em;
+  line-height: 110%;
+  letter-spacing: 0.005em;
+  color: white;
+  margin-bottom: 10px;
+}
+.project-stacks {
+  font-family: "PP Neue Montreal";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.88em;
+  line-height: 110%;
+  letter-spacing: 0.005em;
+  color: #999999;
+  width: 200px;
+}
+
+.see-more-container {
+  padding: 40px 50px;
+}
+.see-more {
+  padding: 1em 2em;
+  background: none;
+  border: 1px solid #262626;
+  font-size: 1em;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .work-cards {
+    padding: 0px;
+  }
+  .project-container {
+    width: 100%;
+  }
+}
