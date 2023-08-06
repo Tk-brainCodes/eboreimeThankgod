@@ -59,9 +59,7 @@ const About = () => {
             <br />
             With a profound curiosity and passion for continuous learning, I
             embrace emerging technologies and seek challenges in the front-end
-            landscape. My adaptability, creativity, and dedication to excellence
-            drive me to surpass expectations, ensuring user delight and
-            satisfaction in every project.
+            landscape. 
             <br />
           </div>
         </div>
