@@ -35,6 +35,7 @@
   color: #999999;
   display: flex;
   flex-flow: column;
+  cursor: pointer;
 }
 .frontend-engineer {
   font-family: "PP Neue Montreal";
