@@ -68,6 +68,10 @@ li {
   gap: 20px;
   margin-top: 3em;
 }
+.active {
+  color: #6d8b74;
+  font-weight: bold;
+}
 @media only screen and (max-width: 768px) {
   .logo {
     width: auto !important;

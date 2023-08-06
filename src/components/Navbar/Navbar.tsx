@@ -1,13 +1,13 @@
-import { Fragment, useState, useContext } from 'react'
-import './Navbar.css'
-import Line from '../Line/Line'
-import styled from 'styled-components'
+import { Fragment, useState, useContext } from "react";
+import "./Navbar.css";
+import Line from "../Line/Line";
+import styled from "styled-components";
 // import HamburgerMenu from '../../assets/icons/hamburger.svg'
 // import Close from '../../assets/icons/close.svg'
-import { motion } from 'framer-motion'
-import { ThemeContext } from '../../provider/theme.provider'
-import { Link } from 'react-scroll'
-import Toggle from './Toggle'
+import { motion } from "framer-motion";
+import { ThemeContext } from "../../provider/theme.provider";
+import { Link } from "react-scroll";
+import Toggle from "./Toggle";
 
 interface ULProps extends React.HTMLAttributes<HTMLUListElement> {
   dark?: boolean;
@@ -71,31 +71,40 @@ const NAV = styled.div`
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   opacity: 50;
-`
+`;
 
 const Navbar = () => {
-  const [openSidenav, setOpenSidenav] = useState(false)
-  const { dark, toggleTheme } = useContext(ThemeContext)
+  const [openSidenav, setOpenSidenav] = useState(false);
+  const { dark, toggleTheme } = useContext(ThemeContext);
 
   const listStyles = {
-    color: dark ? 'white' : '#36363c'
-  }
+    color: dark ? "white" : "#36363c",
+  };
 
   return (
     <Fragment>
       <>
         <NAV>
-          <div className='logo'>
-            <h1 style={{ fontSize: "20px" }}>Eboreime ThankGod.</h1>
-            <Line>
-              <div
-                className='frontend-engineer'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Frontend Engineer
-              </div>
-            </Line>
-          </div>
+          <Link
+            to='home'
+            offset={-110}
+            spy={true}
+            smooth={true}
+            duration={500}
+            activeClass='active'
+          >
+            <div className='logo'>
+              <h1 style={{ fontSize: "20px" }}>Eboreime ThankGod.</h1>
+              <Line>
+                <div
+                  className='frontend-engineer'
+                  style={{ color: `${dark ? "white" : "black"}` }}
+                >
+                  Frontend Engineer
+                </div>
+              </Line>
+            </div>
+          </Link>
           <UL dark={dark} openSidenav={openSidenav}>
             {openSidenav ? (
               <OPEN onClick={() => setOpenSidenav(!openSidenav)}>
@@ -238,5 +247,5 @@ const Navbar = () => {
       </>
     </Fragment>
   );
-}
-export default Navbar
+};
+export default Navbar;
