@@ -128,7 +128,7 @@ const Hero = () => {
               </motion.button>
             </a>
             <a
-              href='https://drive.google.com/file/d/1hIIjLVd5u3FQjVBT2KNxYze6-mm1e1a-/view?usp=sharing'
+              href='https://drive.google.com/file/d/1cgP5RpasoVtK73olUl_fya-VxId1zmle/view?usp=sharing'
               rel='noopener noreferrer'
               target='_blank'
             >
