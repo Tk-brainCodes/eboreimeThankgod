@@ -1,5 +1,12 @@
 export const ARTICLE_LIST = [
   {
+    id: 4,
+    title:
+      "Creating Your Personal Movie Bookmark Application using Next 13.4.13, Redux Toolkit, Firebase, and TypeScript",
+    company: "dev.to",
+    link: "https://dev.to/thankgod/crafting-your-personal-movie-bookmark-application-using-next-13413-redux-toolkit-firebase-and-typescript-2dgj",
+  },
+  {
     id: 1,
     title: "Understanding shared array buffers",
     company: "Logrocket",
