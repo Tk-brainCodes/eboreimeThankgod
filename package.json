@@ -15,8 +15,7 @@
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.5.2",
     "react-scroll": "^1.8.9",
-    "styled-components": "^6.0.7",
-    "tailwindcss-plugins": "^0.3.0"
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
