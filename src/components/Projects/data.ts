@@ -4,7 +4,7 @@ import movie from '../../assets/images/movie-explore.png'
 
 export const PROJECT_DATA = [
   {
-    name: "Movie Expore",
+    name: "Movie Explore",
     description:
       "Get Latest and Trending Movies, also customize your movie profile and mark movies watched, add latest and trending movie, add movies to watch list and customize your library.",
     stack: "Next js(13), Typescript, Firebase, React, Redux, Cypress ",

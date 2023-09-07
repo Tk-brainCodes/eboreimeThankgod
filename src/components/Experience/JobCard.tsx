@@ -4,7 +4,7 @@ import { ThemeContext } from "../../provider/theme.provider";
 interface CompanyProps {
   name: string;
   company: string;
-  date: string
+  date: string;
 }
 
 interface Company {
@@ -13,24 +13,27 @@ interface Company {
 
 const JobCard = ({ company }: Company) => {
   const { dark } = useContext(ThemeContext);
+
   return (
-    <div className='companies'>
-      <p className='role-type' style={{ color: `${dark ? "#999" : "black"}` }}>
+    <div className='basis-1/3 w-100 mb-8'>
+      <p
+        className={`text-lg font-normal ${
+          dark ? "text-gray-300" : "text-white"
+        } mb-2`}
+      >
         {company.name}
       </p>
       <p
-        className='company-title'
-        style={{
-          color: `${dark ? "#CCCCCC" : "rgba(0, 0, 0, 0.707)"}`,
-        }}
+        className={`text-lg font-normal ${
+          dark ? "text-gray-400" : "text-gray-700"
+        } mb-5`}
       >
         {company.company}
       </p>
       <p
-        className='date'
-        style={{
-          color: `${dark ? "#999999" : "rgba(0, 0, 0, 0.707)"}`,
-        }}
+        className={`text-lg font-normal ${
+          dark ? "text-gray-300" : "text-gray-700"
+        }`}
       >
         {company.date}
       </p>

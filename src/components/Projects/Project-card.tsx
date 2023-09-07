@@ -1,4 +1,3 @@
-
 interface DataCardProp {
   name: string;
   description: string;
@@ -22,54 +21,88 @@ const ProjectCard = ({ data }: DataProp) => {
   };
 
   return (
-    <div className='card'>
-      <a href='#'>
-        <div style={styles} />
-      </a>
-      <div className='card-content'>
-        <h5 className='card-title'>
-          <a
-            className='open-link'
-            href={`${data.live}`}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            {data.name}
-            <svg
-              width='16'
-              height='15'
-              viewBox='0 0 16 15'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                stroke='#999999'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-              />
-            </svg>
+    <div className='w-[373px] h-[567px]  bg-neutral-700 rounded-[20px] shadow'>
+      <div
+        className='w-[375px] h-[260px] rounded-tl-[20px] rounded-tr-[20px]'
+        style={styles}
+      />
+      <section className='px-8 py-4 flex items-start  justify-start flex-col'>
+        <div className='text-center text-stone-300 text-[28px] font-medium leading-relaxed'>
+          {data.name}
+        </div>
+        <div className='w-[314px] text-stone-300 text-lg font-light leading-relaxed'>
+          {data.description}
+        </div>
+        <div className='w-[314px] mt-[1em]'>
+          <span className='text-stone-300 text-base font-normal leading-relaxed'>
+            Tech stack :
+          </span>
+          <span className='text-stone-300 text-sm font-light leading-relaxed'>
+            {data.stack}
+          </span>
+        </div>
+        <div className='flex justify-between items-center gap-9 mt-[1em]'>
+          <a href={`${data.live}`} target='_blank'>
+            <div className='flex gap-3'>
+              <svg
+                width='20'
+                height='20'
+                viewBox='0 0 20 20'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M11.2867 8.7133C10.6041 8.031 9.67846 7.64771 8.71334 7.64771C7.74821 7.64771 6.82259 8.031 6.14 8.7133L3.56584 11.2866C2.88324 11.9692 2.49976 12.895 2.49976 13.8604C2.49976 14.8257 2.88324 15.7515 3.56584 16.4341C4.24844 17.1167 5.17424 17.5002 6.13959 17.5002C7.10493 17.5002 8.03074 17.1167 8.71334 16.4341L10 15.1475'
+                  stroke='#FCFCFC'
+                  stroke-width='1.66667'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                />
+                <path
+                  d='M8.71338 11.2867C9.39597 11.969 10.3216 12.3523 11.2867 12.3523C12.2518 12.3523 13.1775 11.969 13.86 11.2867L16.4342 8.71334C17.1168 8.03074 17.5003 7.10493 17.5003 6.13959C17.5003 5.17424 17.1168 4.24844 16.4342 3.56584C15.7516 2.88324 14.8258 2.49976 13.8605 2.49976C12.8951 2.49976 11.9693 2.88324 11.2867 3.56584L10 4.8525'
+                  stroke='#FCFCFC'
+                  stroke-width='1.66667'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                />
+              </svg>
+
+              <span className='text-white text-base font-normal underline leading-relaxed'>
+                Live Preview
+              </span>
+            </div>
           </a>
-          <a
-            className='open-link'
-            href={`${data.github}`}
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='18'
-              viewBox='0 0 496 512'
-              fill='#6d8b74'
-            >
-              <path d='M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z' />
-            </svg>
+          <a href={`${data.github}`} target='_blank'>
+            <div className='flex gap-3 '>
+              <svg
+                width='20'
+                height='20'
+                viewBox='0 0 20 20'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <g clip-path='url(#clip0_14_210)'>
+                  <path
+                    fill-rule='evenodd'
+                    clip-rule='evenodd'
+                    d='M10 0C4.475 0 0 4.475 0 10C0 14.425 2.8625 18.1625 6.8375 19.4875C7.3375 19.575 7.525 19.275 7.525 19.0125C7.525 18.775 7.5125 17.9875 7.5125 17.15C5 17.6125 4.35 16.5375 4.15 15.975C4.0375 15.6875 3.55 14.8 3.125 14.5625C2.775 14.375 2.275 13.9125 3.1125 13.9C3.9 13.8875 4.4625 14.625 4.65 14.925C5.55 16.4375 6.9875 16.0125 7.5625 15.75C7.65 15.1 7.9125 14.6625 8.2 14.4125C5.975 14.1625 3.65 13.3 3.65 9.475C3.65 8.3875 4.0375 7.4875 4.675 6.7875C4.575 6.5375 4.225 5.5125 4.775 4.1375C4.775 4.1375 5.6125 3.875 7.525 5.1625C8.325 4.9375 9.175 4.825 10.025 4.825C10.875 4.825 11.725 4.9375 12.525 5.1625C14.4375 3.8625 15.275 4.1375 15.275 4.1375C15.825 5.5125 15.475 6.5375 15.375 6.7875C16.0125 7.4875 16.4 8.375 16.4 9.475C16.4 13.3125 14.0625 14.1625 11.8375 14.4125C12.2 14.725 12.5125 15.325 12.5125 16.2625C12.5125 17.6 12.5 18.675 12.5 19.0125C12.5 19.275 12.6875 19.5875 13.1875 19.4875C15.1726 18.8173 16.8976 17.5414 18.1197 15.8395C19.3418 14.1375 19.9994 12.0952 20 10C20 4.475 15.525 0 10 0Z'
+                    fill='white'
+                  />
+                </g>
+                <defs>
+                  <clipPath id='clip0_14_210'>
+                    <rect width='20' height='20' fill='white' />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span className='text-white text-base font-normal underline leading-relaxed'>
+                View Code
+              </span>
+            </div>
           </a>
-        </h5>
-        <span className='text-stack'>{data.stack}</span>
-        <p className='card-text'>{data.description}</p>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
