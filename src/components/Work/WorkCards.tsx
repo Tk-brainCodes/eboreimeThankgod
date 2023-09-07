@@ -1,10 +1,7 @@
-import  {  useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../../provider/theme.provider";
 import Arrow from "../../assets/icons/arrow.svg";
-import {  motion } from "framer-motion";
-
-
-
+import { motion } from "framer-motion";
 
 interface WorkCardProp {
   id: number;
@@ -22,19 +19,17 @@ const WorkCards = ({ data }: WorkCardData) => {
   const { dark } = useContext(ThemeContext);
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      className='project-container'
-    >
-      <div
-        className='project-title'
-        style={{ color: `${dark ? "white" : "black"}` }}
-      >
-        {data.name}
-        <a href={`${data.link}`} rel='noopener noreferrer' target='_blank'>
+    <motion.div whileHover={{ scale: 1.1 }} className='project-container'>
+      <a href={`${data.link}`} rel='noopener noreferrer' target='_blank'>
+        <div
+          className='project-title'
+          style={{ color: `${dark ? "white" : "black"}` }}
+        >
+          {data.name}
           <img style={{ marginLeft: "5px" }} src={Arrow} alt='open-link' />
-        </a>
-      </div>
+        </div>
+      </a>
+
       <div
         className='project-description'
         style={{ color: `${dark ? "white" : "black"}` }}

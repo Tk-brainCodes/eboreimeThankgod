@@ -16,7 +16,7 @@ const About = () => {
       >
         <Line>About.</Line>
       </div>
-      <div className='about-container'>
+      <div className='about-container h-fit'>
         <div className='title'>
           <div className='tech-stack'>
             <div
@@ -52,15 +52,9 @@ const About = () => {
           <div className='about-section-text'>
             I am a front end engineer who's passionate about working closely
             with both engineers and designers to create exceptional products
-            that meet specific needs. My main focus is, on writing code that can
-            be used across multiple platforms resulting in user experiences that
-            are both visually appealing and impactful. I truly love what I do.
-            <br />
-            <br />
-            With a profound curiosity and passion for continuous learning, I
-            embrace emerging technologies and seek challenges in the front-end
-            landscape. 
-            <br />
+            that meet specific needs. With a profound curiosity and passion for
+            continuous learning, I embrace emerging technologies and seek
+            challenges in the front-end landscape.
           </div>
         </div>
       </div>

@@ -9,22 +9,26 @@ interface CompanyProp {
 }
 
 interface CompanyDataProps {
-  data: CompanyProp
+  data: CompanyProp;
 }
 
 const ArticleList = ({ data }: CompanyDataProps) => {
   const { dark } = useContext(ThemeContext);
   return (
-    <div className='Article-container'>
-      <div className='Article-heading-text'>
-        <div
-          className='Article-heading-title'
-          style={{ color: `${dark ? "white" : "black"}` }}
+    <div className='mt-10'>
+      <div
+        className={`${
+          dark ? "text-white" : "text-black"
+        } flex items-center justify-start  flex-wrap font-semibold hover:text-[#6d8b74] transition ease-in-out font-pp-neue-montreal text-3xl leading-100 tracking-wide  cursor-pointer`}
+      >
+        {data.title}
+        <a
+          href={data.link}
+          rel='noopener noreferrer'
+          target='_blank'
+          className='ml-2 flex flex-nowrap gap-3'
         >
-          {data.title} –
-        </div>{" "}
-        {data.company}
-        <a href={`${data.link}`} rel='noopener noreferrer' target='_blank'>
+          – {data.company}
           <img src={Arrow} alt='open-link' />
         </a>
       </div>

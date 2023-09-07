@@ -68,9 +68,6 @@ const NAV = styled.div`
   border-bottom: 1px solid #262626;
   position: fixed;
   z-index: 10;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  opacity: 50;
 `;
 
 const Navbar = () => {
@@ -84,7 +81,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <>
-        <NAV>
+        <NAV className='firefox:bg-opacity-90 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-[#121212]'>
           <Link
             to='home'
             offset={-110}

@@ -4,6 +4,7 @@ import { Experience } from "./Data";
 import JobCard from "./JobCard";
 import Line from "../Line/Line";
 import { Element } from "react-scroll";
+import './Experience.css'
 
 const JobExperience = () => {
   const { dark } = useContext(ThemeContext);
@@ -11,7 +12,7 @@ const JobExperience = () => {
   return (
     <Element
       name='experience'
-      className='w-full border-b border-gray-700 p-8 flex gap-8'
+      className='Experience w-full border-b border-gray-700 p-8 flex gap-8'
     >
       <div className={`w-1/3 ${dark ? "text-gray-400" : "text-black"}`}>
         <Line>Experience.</Line>

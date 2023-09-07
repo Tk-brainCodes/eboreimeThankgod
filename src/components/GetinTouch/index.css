@@ -32,4 +32,6 @@
   line-height: 100%;
   letter-spacing: -0.02em;
   color: #fafafa;
+  display: flex;
+  gap: 3px;
 }

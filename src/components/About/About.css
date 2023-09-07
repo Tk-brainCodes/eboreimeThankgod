@@ -7,8 +7,11 @@
 }
 .about-container {
   width: 100vw;
-  height: auto !important;
+  height: auto;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
   margin-bottom: 5em;
 }
 .title {
@@ -32,9 +35,9 @@
   margin-bottom: 20px;
 }
 .about-section-text {
-  width: 40vw;
   font-size: 1.4rem;
   font-family: "PP Neue Montreal";
+  height: auto;
 }
 .title-name {
   font-style: normal;
@@ -61,15 +64,8 @@
   background-image: url("../../assets/images/thankgod.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
-  margin-top: 1.5em;
   position: relative;
   margin-left: 10px;
-  border-radius: 4px;
-}
-.gradient-border {
-  width: 300px;
-  height: 300px;
-  border: 4px solid #6d8b74;
   border-radius: 4px;
 }
 .stacks {
@@ -121,6 +117,9 @@
   }
 }
 @media only screen and (max-width: 600px) {
+  .about-container {
+    display: block;
+  }
   .my-image {
     width: 200px;
     height: 250px;
