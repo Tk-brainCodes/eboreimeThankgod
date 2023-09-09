@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../provider/theme.provider";
 import "./HeroSection.css";
 import { motion } from "framer-motion";
-import {Element} from 'react-scroll'
-
+import { Element } from "react-scroll";
 
 const containerVariant = {
   hidden: {
@@ -46,6 +45,33 @@ const Hero = () => {
         </motion.div>
         <div className='social-handles'>
           <div className='button-container'>
+            <a
+              href='https://drive.google.com/file/d/1fxYTdosQNa8Pf1emJ6gQqaQWfqEi7too/view?usp=sharing'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className='link-button'
+                style={{ color: `${dark ? "white" : "black"}` }}
+              >
+                Resume
+                <svg
+                  width='16'
+                  height='15'
+                  viewBox='0 0 16 15'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
+                    stroke='#999999'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                  />
+                </svg>{" "}
+              </motion.button>
+            </a>
             <a
               href='https://www.twitter.com/tkworldclass'
               rel='noopener noreferrer'
@@ -125,33 +151,6 @@ const Hero = () => {
                     stroke-linejoin='round'
                   />
                 </svg>
-              </motion.button>
-            </a>
-            <a
-              href='https://drive.google.com/file/d/1fxYTdosQNa8Pf1emJ6gQqaQWfqEi7too/view?usp=sharing'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className='link-button'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Resume
-                <svg
-                  width='16'
-                  height='15'
-                  viewBox='0 0 16 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                    stroke='#999999'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  />
-                </svg>{" "}
               </motion.button>
             </a>
           </div>

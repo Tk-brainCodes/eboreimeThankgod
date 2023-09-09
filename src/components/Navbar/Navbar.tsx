@@ -174,22 +174,6 @@ const Navbar = () => {
               </motion.li>
             </Link>
             <Link
-              to='experience'
-              offset={-110}
-              spy={true}
-              smooth={true}
-              duration={500}
-              activeClass='active'
-            >
-              <motion.li
-                whileTap={{ scale: 1.1 }}
-                style={listStyles}
-                className='highlight-link'
-              >
-                Experience
-              </motion.li>
-            </Link>
-            <Link
               to='projects'
               offset={-110}
               spy={true}

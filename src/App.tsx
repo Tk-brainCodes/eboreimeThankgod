@@ -4,7 +4,6 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero";
 import About from "./components/About/About";
-import JobExperience from "./components/Experience/Experience";
 import Work from "./components/Work/Work";
 import Articles from "./components/Articles/Articles";
 import GetIntouch from "./components/GetinTouch";
@@ -19,7 +18,6 @@ function App() {
         <Navbar />
         <Hero />
         <About />
-        <JobExperience />
         <Work />
         <Articles />
         <GetIntouch />

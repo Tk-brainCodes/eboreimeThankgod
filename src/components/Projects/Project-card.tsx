@@ -21,7 +21,7 @@ const ProjectCard = ({ data }: DataProp) => {
   };
 
   return (
-    <div className='w-[373px] h-[567px]  bg-neutral-700 rounded-[20px] shadow'>
+    <div className='w-[373px] h-auto  bg-neutral-700 rounded-[20px] shadow'>
       <div
         className='w-[375px] h-[260px] rounded-tl-[20px] rounded-tr-[20px]'
         style={styles}

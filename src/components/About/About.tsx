@@ -43,7 +43,7 @@ const About = () => {
         </div>
 
         <div
-          className='description'
+          className='description h-auto'
           style={{ color: `${dark ? "white" : "black"}` }}
         >
           <div className='gradient-border'>
