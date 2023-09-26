@@ -23,7 +23,7 @@ const UL = styled.ul<ULProps>`
   gap: 20px;
   font-family: 'PP Neue Montreal';
   color: rgb(17, 16, 16);
-  margin-right: 10px;
+  margin-right: 20px;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
@@ -91,7 +91,7 @@ const Navbar = () => {
             duration={500}
             activeClass='active'
           >
-            <div className='logo'>
+            <div className='logo ml-[14px]'>
               <h1 style={{ fontSize: "20px" }}>Eboreime ThankGod.</h1>
               <Line>
                 <div
