@@ -2,8 +2,8 @@
   width: 100vw;
   height: auto !important;
 }
+
 .work-heading {
-  padding: 40px 30px;
   font-family: "PP Neue Montreal";
   font-style: normal;
   font-weight: 400;
@@ -11,6 +11,7 @@
   line-height: 110%;
   letter-spacing: -0.02em;
   color: #999999;
+  padding: 30px 35px;
 }
 .work-cards {
   display: flex;
@@ -18,14 +19,13 @@
   height: auto !important;
   flex-wrap: wrap;
   gap: 5px;
-  padding: 40px 50px;
+  padding: 30px 35px;
 }
 .project-container {
   border: 1px solid #262626;
   border-radius: 4px;
   width: 350px;
   height: auto !important;
-  padding: 20px 20px;
 }
 .project-title {
   font-family: "PP Neue Montreal";

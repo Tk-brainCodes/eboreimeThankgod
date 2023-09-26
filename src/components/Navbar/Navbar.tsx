@@ -23,6 +23,7 @@ const UL = styled.ul<ULProps>`
   gap: 20px;
   font-family: 'PP Neue Montreal';
   color: rgb(17, 16, 16);
+  margin-right: 10px;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;

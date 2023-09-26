@@ -25,7 +25,7 @@ const Hero = () => {
     <>
       <Element
         name='home'
-        className='w-full xl:w-[100vw] lg:w-[100vw] h-auto flex items-center justify-between flex-wrap relative'
+        className='Hero w-full xl:w-[100vw] lg:w-[100vw]  h-auto flex items-center justify-between flex-wrap '
       >
         <motion.div variants={containerVariant} className='text'>
           <motion.div

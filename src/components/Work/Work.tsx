@@ -14,6 +14,7 @@ const Work = () => {
     <div
       id='work'
       className='works'
+      
     >
       <div
         className='work-heading'

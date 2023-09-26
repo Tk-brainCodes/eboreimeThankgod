@@ -75,7 +75,7 @@ const About = () => {
           </div>
 
           <div
-            className='description w-[100vw] h-auto mb-[20px] text-white flex items-center justify-around gap-[30px] max-sm:flex-wrap'
+            className='description w-[100vw] h-auto mb-[20px] text-white flex items-center justify-around gap-[10px] max-sm:flex-wrap'
             style={{ color: `${dark ? "white" : "black"}` }}
           >
             <div className='my-image w-[80vw] h-[500px] lg:w-[300px] lg:h-[340px] ' />

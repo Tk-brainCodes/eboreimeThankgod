@@ -50,7 +50,7 @@ const WorkCards = ({ data }: WorkCardData) => {
       initial='hidden'
       animate={controls}
       variants={cardVariants}
-      className={`project-container z-40 relative ${
+      className={`project-container px-4 py-4 ${
         dark ? "bg-black" : "bg-white"
       }`}
     >

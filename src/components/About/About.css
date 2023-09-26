@@ -2,6 +2,7 @@
   border-top: 1px solid #262626;
   border-bottom: 1px solid #262626;
   color: #fff;
+  padding: 60px 35px;
 }
 .about-container {
   width: 100vw;
@@ -17,7 +18,6 @@
   height: auto !important;
   color: #fff;
   margin-bottom: 30px;
-  padding: 40px 30px;
 }
 .description {
   font-family: "PP Neue Montreal";
@@ -37,7 +37,6 @@
   font-size: 1.3em;
   color: #999;
   width: auto !important;
-  padding: 40px 30px;
 }
 .tech-stack {
   width: 150px;
