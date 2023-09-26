@@ -1,4 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { ThemeContext } from "../../provider/theme.provider";
 import Arrow from "../../assets/icons/arrow.svg";
 
@@ -14,8 +16,40 @@ interface CompanyDataProps {
 
 const ArticleList = ({ data }: CompanyDataProps) => {
   const { dark } = useContext(ThemeContext);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className='mt-10'>
+    <motion.div
+      ref={ref}
+      initial='hidden'
+      animate={controls}
+      variants={cardVariants}
+      className='mt-10'
+    >
       <div
         className={`${
           dark ? "text-white" : "text-black"
@@ -32,7 +66,7 @@ const ArticleList = ({ data }: CompanyDataProps) => {
           <img src={Arrow} alt='open-link' />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

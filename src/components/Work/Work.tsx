@@ -7,23 +7,28 @@ import "./Work.css";
 import Project from "../Projects/Project";
 
 const Work = () => {
+
   const { dark } = useContext(ThemeContext);
+
   return (
-    <div id="work" className="works">
+    <div
+      id='work'
+      className='works'
+    >
       <div
-        className="work-heading"
+        className='work-heading'
         style={{ color: `${dark ? "#999" : "black"}` }}
       >
         <Line>Featured Projects.</Line>
       </div>
       <Project /> <br />
       <div
-        className="work-heading"
+        className='work-heading'
         style={{ color: `${dark ? "#999" : "black"}` }}
       >
         <Line>Other Projects.</Line>
       </div>
-      <div className="work-cards">
+      <div className='work-cards'>
         {WORK_DATA.map((data) => (
           <WorkCards data={data} key={data.id} />
         ))}

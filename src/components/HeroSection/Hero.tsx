@@ -23,7 +23,10 @@ const Hero = () => {
   const { dark } = useContext(ThemeContext);
   return (
     <>
-      <Element name='home' className='hero-section'>
+      <Element
+        name='home'
+        className='w-full xl:w-[100vw] lg:w-[100vw] h-auto flex items-center justify-between flex-wrap relative'
+      >
         <motion.div variants={containerVariant} className='text'>
           <motion.div
             variants={containerVariant}
@@ -33,7 +36,7 @@ const Hero = () => {
           >
             <div className='stars'>***</div>
             <motion.div
-              className='hero-text'
+              className='hero-text lg:w-[55vw] w-full'
               style={{ color: `${dark ? "white" : "black"}` }}
             >
               I have a passion, for creating front end solutions that deliver

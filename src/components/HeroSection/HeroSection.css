@@ -1,12 +1,4 @@
-.hero-section {
-  width: 100vw;
-  height: auto !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-}
+
 .text {
   font-size: 1.5em;
   color: white;
@@ -58,8 +50,6 @@ h1 {
   font-size: 2.2em;
   line-height: 100%;
   letter-spacing: -0.02em;
-  width: 55vw;
-  /* position: absolute; */
 }
 .social-handles {
   width: auto !important;

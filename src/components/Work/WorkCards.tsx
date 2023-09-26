@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { ThemeContext } from "../../provider/theme.provider";
 import Arrow from "../../assets/icons/arrow.svg";
-import { motion } from "framer-motion";
 
 interface WorkCardProp {
   id: number;
@@ -18,8 +19,42 @@ interface WorkCardData {
 const WorkCards = ({ data }: WorkCardData) => {
   const { dark } = useContext(ThemeContext);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
-    <motion.div whileHover={{ scale: 1.1 }} className='project-container'>
+    <motion.div
+      ref={ref}
+      initial='hidden'
+      animate={controls}
+      variants={cardVariants}
+      whileHover={{ scale: 1.5 }}
+      className={`project-container z-40 relative ${
+        dark ? "bg-black" : "bg-white"
+      }`}
+    >
       <a href={`${data.link}`} rel='noopener noreferrer' target='_blank'>
         <div
           className='project-title'
