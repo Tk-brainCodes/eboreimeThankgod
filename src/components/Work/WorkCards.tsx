@@ -50,7 +50,6 @@ const WorkCards = ({ data }: WorkCardData) => {
       initial='hidden'
       animate={controls}
       variants={cardVariants}
-      whileHover={{ scale: 1.5 }}
       className={`project-container z-40 relative ${
         dark ? "bg-black" : "bg-white"
       }`}
