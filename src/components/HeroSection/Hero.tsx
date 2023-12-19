@@ -41,8 +41,8 @@ const Hero = () => {
             >
               I have a passion, for creating front end solutions that deliver
               performance and address practical problems. My expertise lies in
-              designing and constructing high quality products and systems that
-              make a difference.
+              designing and building high quality products that make a
+              difference.
             </motion.div>
           </motion.div>
         </motion.div>
