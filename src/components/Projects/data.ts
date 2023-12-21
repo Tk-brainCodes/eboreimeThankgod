@@ -8,7 +8,8 @@ import chilink from "../../assets/images/chilink.png";
 export const PROJECT_DATA = [
   {
     name: "Chilink Web",
-    description: "Implementation of the chilink meeting page design.",
+    description:
+      "Implementation of the chilink interactive meeting page design for web and mobile.",
     stack: "React js, TailwindCSS, Framer Motion, Typescript",
     github: "",
     live: "https://chilink-web.vercel.app/live-meeting",
