@@ -8,7 +8,7 @@ const Project = () => {
     <>
       <Element
         name='projects'
-        className='project w-full flex flex-row items-center justify-between flex-wrap'
+        className='project w-full flex flex-row gap-[10px] items-center justify-between flex-wrap'
       >
         {PROJECT_DATA.map((data, index) => (
           <ProjectCard data={data} key={index} />
