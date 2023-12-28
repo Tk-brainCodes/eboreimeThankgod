@@ -12,7 +12,7 @@ export const PROJECT_DATA = [
       "Implementation of the chilink interactive meeting page design for web and mobile.",
     stack: "React js, TailwindCSS, Framer Motion, Typescript",
     github: "",
-    live: "https://chilink-web.vercel.app/live-meeting",
+    live: "https://www.chilink.app/",
     image: chilink,
   },
 
