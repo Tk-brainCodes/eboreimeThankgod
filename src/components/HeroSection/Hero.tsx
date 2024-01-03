@@ -49,7 +49,7 @@ const Hero = () => {
         <div className='social-handles'>
           <div className='button-container'>
             <a
-              href='https://drive.google.com/file/d/1msQKxtcxsWXqI9H3iW6ipQhpvCYirX9a/view?usp=sharing'
+              href='https://drive.google.com/file/d/12SqLx3Zns6hcptYh9JjJLLp_g1UYV-cF/view?usp=sharing'
               rel='noopener noreferrer'
               target='_blank'
             >
