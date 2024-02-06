@@ -16,7 +16,7 @@ function App() {
     <>
       <Navbar />
       <main
-        className={`flex flex-col items-center  justify-center ${
+        className={`flex flex-col items-center justify-center ${
           dark ? "bg-black" : "bg-white"
         } w-[100vw]`}
       >

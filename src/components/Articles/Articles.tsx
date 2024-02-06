@@ -18,14 +18,20 @@ const Articles = () => {
     }
   }, [controls, inView]);
   return (
-    <Element name='articles' className='Articles px-8 py-8 border-t border-gray-700'>
+    <Element
+      name='articles'
+      className='Articles px-[35px] py-[40px] w-full border-t border-gray-700'
+    >
       <div
         className='Article-heading'
         style={{ color: `${dark ? "#999" : "black"}` }}
       >
         <Line>Articles.</Line>
       </div>
-      <motion.div ref={ref} className='Articles'>
+      <motion.div
+        ref={ref}
+        className='Articles grid grid-cols-4 max-sm:grid-cols-1 max-md:grid-cols-2'
+      >
         {ARTICLE_LIST.map((data) => (
           <ArticleList data={data} key={data.id} />
         ))}

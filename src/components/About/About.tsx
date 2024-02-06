@@ -1,6 +1,5 @@
-import { useContext, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useContext, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { ThemeContext } from "../../provider/theme.provider";
 import "./About.css";
 import Line from "../Line/Line";
@@ -9,8 +8,8 @@ import { Element } from "react-scroll";
 
 const About = () => {
   const { dark } = useContext(ThemeContext);
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5, once: true });
 
   const cardVariants = {
     hidden: {
@@ -26,20 +25,15 @@ const About = () => {
     },
   };
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   return (
-    <Element name='about' className='About w-[100vw] h-auto'>
+    <Element
+      name='about'
+      className='About w-[100vw] px-[35px] py-[40px] h-auto'
+    >
       <motion.div
         ref={ref}
         initial='hidden'
-        animate={controls}
+        animate={isInView ? "visible" : "hidden"}
         variants={cardVariants}
       >
         <div

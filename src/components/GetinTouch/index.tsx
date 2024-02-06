@@ -13,7 +13,7 @@ const GetIntouch = () => {
     window.location.href = mailtoLink;
   };
   return (
-    <Element name='contact' className='base-container'>
+    <Element name='contact' className='base-container px-[35px] py-[40px]'>
       <div className='get-in-touch'>Interested in working together?</div>
       <div
         className='container-link'
