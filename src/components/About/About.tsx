@@ -36,10 +36,7 @@ const About = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={cardVariants}
       >
-        <div
-          className='title-name'
-          style={{ color: `${dark ? "#999" : "black"}` }}
-        >
+        <div className='' style={{ color: `${dark ? "#999" : "black"}` }}>
           <Line>About.</Line>
         </div>
         <div className='about-container h-fit'>

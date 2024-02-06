@@ -82,7 +82,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <>
-        <NAV className='firefox:bg-opacity-90 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-[#121212]'>
+        <NAV className='z-40 firefox:bg-opacity-90 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-[#121212]'>
           <Link
             to='home'
             offset={-110}

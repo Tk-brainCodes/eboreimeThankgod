@@ -11,7 +11,7 @@ const Work = () => {
   return (
     <div id='work ' className=' w-full px-[35px] py-[40px] '>
       <div
-        className='work-heading mb-[30px]'
+        className='mb-[30px]'
         style={{ color: `${dark ? "#999" : "black"}` }}
       >
         <Line>Featured Projects.</Line>
