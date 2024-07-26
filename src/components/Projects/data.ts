@@ -15,7 +15,7 @@ export const PROJECT_DATA = [
     stack:
       "Nextjs, TailwindCss, Framer Motion, Typescript, Prisma, PlanetScale db (MYSQL), Context API",
     github: "https://github.com/Tk-brainCodes/Discord-Clone",
-    live: "https://discord-clone-production-e467.up.railway.app/",
+    live: "https://eboreime-thankgod-discord-clone.vercel.app/",
     image: discord,
   },
   {
