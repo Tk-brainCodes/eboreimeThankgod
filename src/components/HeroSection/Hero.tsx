@@ -40,10 +40,9 @@ const Hero = () => {
               className='hero-text lg:w-[55vw] w-full'
               style={{ color: `${dark ? "white" : "black"}` }}
             >
-              I have a passion, for creating front end solutions that deliver
-              performance and address practical problems. My expertise lies in
-              designing and building high quality products that make a
-              difference.
+              I have a passion, for developing software applications and
+              leveraging AI and large language models (LLMs) to create
+              innovative solutions.
             </motion.div>
           </motion.div>
         </motion.div>
