@@ -68,7 +68,7 @@ const NAV = styled.div`
   width: 100%;
   border-bottom: 1px solid #262626;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
 `;
 
 const Navbar = () => {
@@ -82,7 +82,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <>
-        <NAV className='z-40 firefox:bg-opacity-90 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-[#121212]'>
+        <NAV className='firefox:bg-opacity-90 bg-opacity-30 backdrop-filter backdrop-blur-lg bg-[#121212]'>
           <Link
             to='home'
             offset={-110}
