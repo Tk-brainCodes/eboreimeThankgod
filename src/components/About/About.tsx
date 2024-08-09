@@ -54,7 +54,8 @@ const About = () => {
                 style={{ color: `${dark ? "#999" : "black"}` }}
               >
                 RestAPI, ReactQuery <br />
-                Typescript, React/Redux, <br /> Node.js, Express.js,
+                Typescript, Langchain, LLM (Large Language Models) React/Redux,{" "}
+                <br /> Node.js, Express.js,
                 <br />
                 Next.js (13+), Git, <br />
                 Github, Tailwind CSS
