@@ -77,7 +77,7 @@ const ProjectCard = ({ data }: DataProp) => {
             onClick={() => setSelectedItem(data)}
           >
             <div
-              className='relative w-full rounded-[20px] flex flex-col items-center justify-between cursor-pointer group  bg-neutral-600'
+              className='relative w-full rounded-[20px] flex flex-col items-center justify-between cursor-pointer group  bg-white'
               style={styles}
             >
               <Button className='relative hidden group group-hover:flex group-hover:items-center group-hover:gap-x-4 hover:bg-emerald-500 to-light-green-400 hover:text-white z-10 mt-[6em] px-8 py-8 rounded-md bg-white text-neutral-800 transition ease-in-out'>

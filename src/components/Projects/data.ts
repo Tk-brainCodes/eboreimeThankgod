@@ -1,12 +1,33 @@
 import clothing from "../../assets/images/clothing-line.png";
 import movie from "../../assets/images/movie-explore.png";
-import storymashup from "../../assets/images/storymashup.png";
-import metacare from "../../assets/images/metacare.png";
 import moviebookmark from "../../assets/images/view.png";
-import chilink from "../../assets/images/chilink.png";
-import discord from "../../assets/images/discord-animation.gif";
+import discord from "../../assets/images/discord-image.svg";
+import musciMood from "../../assets/images/demo-pic.png";
+import pantryTracker from "../../assets/images/pantry.png";
 
 export const PROJECT_DATA = [
+  {
+    id: 10,
+    name: "AI Music Mood",
+    description:
+      "Generate dynamic playlist based on your current mood using sportify api, langchain, and google generative ai.",
+    stack:
+      "Next.js, LangChain, Google-GenAI, Spotify Web API, TypeScript, ShadCN UI, Lucide Icons",
+    github: "https://github.com/Tk-brainCodes/music-mood",
+    live: "https://spotify-music-mood.vercel.app/music",
+    image: musciMood,
+  },
+  {
+    id: 11,
+    name: "AI Pantry Tracker",
+    description:
+      "Pantry Tracker is a web application that helps you manage your pantry items efficiently. Keep track of your food inventory, monitor expiry dates, and upload images of your items for easy identification usin AI.",
+    stack:
+      "Next js, TypeScript, Firebase (Firestore and Storage), Material-UI (MUI), React Camera Pro, Google Generative AI via Langchain.",
+    github: "https://github.com/Tk-brainCodes/AI-Pantry-Tracker",
+    live: "https://ai-inventory-manager.vercel.app/",
+    image: pantryTracker,
+  },
   {
     id: 1,
     name: "Discord Clone",
@@ -32,22 +53,12 @@ export const PROJECT_DATA = [
     id: 7,
     name: "Apparel",
     description:
-      " A full-stack react clothing line. Shop easily online, and make payment directly with stripe from your account. ",
+      " A full-stack react `APPAREL` clothing line. Shop easily online, and make payment directly with stripe from your account. ",
     stack:
       " Graphql, Firebase , Typescript, React/Redux, Node.js, Express.js,scss/css, Javascript,Jest, Enzyme",
     github: "https://github.com/Tk-brainCodes/Crown-Clothing",
     live: "https://crown-clothing-shop.vercel.app/",
     image: clothing,
-  },
-  {
-    id: 2,
-    name: "Chilink Web",
-    description:
-      "Implementation of the chilink interactive meeting page design for web and mobile.",
-    stack: "React js, TailwindCSS, Framer Motion, Typescript",
-    github: "",
-    live: "https://www.chilink.app/",
-    image: chilink,
   },
   {
     id: 6,
@@ -58,25 +69,5 @@ export const PROJECT_DATA = [
     live: "https://movie-bookmark.vercel.app/",
     image: moviebookmark,
     github: "https://github.com/Tk-brainCodes/Movie-Bookmark",
-  },
-  {
-    id: 4,
-    name: "StoryMashup",
-    description:
-      "Discover a world of AI-generated tales tailored just for you, in an app that caters to readers of all ages and interests.",
-    stack: "Nextjs,Typescript,Next UI, Tailwind CSS, REST API",
-    live: "https://www.storymashup.co/",
-    image: storymashup,
-    github: "private",
-  },
-  {
-    id: 5,
-    name: "Metacare Dashboard",
-    description:
-      "A User Interface implementation of the MetaCare dashboard design.",
-    stack: "React js,Typescript,SCSS, apexchart.js",
-    live: "https://metacare-dashboard.vercel.app/",
-    image: metacare,
-    github: "https://github.com/Tk-brainCodes/Dashboard",
   },
 ];
