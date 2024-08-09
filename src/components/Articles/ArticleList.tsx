@@ -46,7 +46,7 @@ const ArticleList = ({ data }: CompanyDataProps) => {
       <div className='w-full'>
         <div
           className={cn(
-            "bg-white h-[350px] w-[250px] max-sm:w-full max-md:w-full max-sm:h-auto max-md:h-auto group  border-gray-200 rounded-lg mb-5",
+            "bg-slate-100 h-[350px] w-[250px] max-sm:w-full max-md:w-full max-sm:h-auto max-md:h-auto group  border-gray-200 rounded-lg mb-5",
             dark && "bg-zinc-950"
           )}
         >
