@@ -20,7 +20,12 @@ const GetIntouch = () => {
         style={{ color: `${dark ? "white" : "black"}`, cursor: "pointer" }}
         onClick={handleComposeEmail}
       >
-        Get in touch <img src={Arrow} alt='open-link' />
+        Get in touch{" "}
+        <img
+          src={Arrow}
+          alt='open-link'
+          className='w-[25px] h-[25x] mb-[1em]'
+        />
       </div>
     </Element>
   );
