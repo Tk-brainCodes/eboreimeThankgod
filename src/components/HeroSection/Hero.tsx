@@ -3,6 +3,7 @@ import { ThemeContext } from "../../provider/theme.provider";
 import "./HeroSection.css";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
+import { BackgroundLines } from "@/components/ui/background-lines";
 
 const containerVariant = {
   hidden: {
@@ -26,32 +27,36 @@ const Hero = () => {
     <>
       <Element
         name='home'
-        className='Hero w-full xl:w-[100vw] lg:w-[100vw]   h-auto flex items-center justify-between flex-wrap '
+        className='w-[100vw] flex items-start justify-between h-[100vh] max-md:h-auto flex-row max-md:flex-col max-sm:flex-col  '
       >
-        <motion.div variants={containerVariant} className='text'>
-          <motion.div
-            variants={containerVariant}
-            animate='visible'
-            initial='hidden'
-            className='sub-text'
-          >
-            <div className='stars'>***</div>
+        <BackgroundLines className=' w-[50vw] '>
+          <motion.div variants={containerVariant} className='text  '>
             <motion.div
-              className='hero-text lg:w-[55vw] w-full'
-              style={{ color: `${dark ? "white" : "black"}` }}
+              variants={containerVariant}
+              animate='visible'
+              initial='hidden'
+              className='sub-text  h-full  mt-[7em] max-md:mt-0 max-sm:mt-0'
             >
-              I have a passion, for developing software applications and
-              leveraging AI and large language models (LLMs) to create
-              innovative solutions.
+              <div className='stars'>***</div>
+              <motion.div
+                className='hero-text lg:w-[55vw] w-full break-normal z-10'
+                style={{ color: `${dark ? "white" : "black"}` }}
+              >
+                I have a passion, for developing software applications and
+                leveraging AI and large language models (LLMs) to create
+                innovative solutions.
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
-        <div className='social-handles'>
+        </BackgroundLines>
+
+        <div className='social-handles z-10 flex items-end justify-end h-[100vh] max-md:h-auto  max-sm:h-auto max-md:px-[3em] max-md:mt-[2em]'>
           <div className='button-container'>
             <a
               href='https://drive.google.com/file/d/11NKyw1Oew7IJ-keeKKWft-48Fx5NpYnq/view?usp=sharing'
               rel='noopener noreferrer'
               target='_blank'
+              className='cursor-pointer'
             >
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -79,6 +84,7 @@ const Hero = () => {
               href='https://www.twitter.com/tkworldclass'
               rel='noopener noreferrer'
               target='_blank'
+              className='cursor-pointer'
             >
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -106,6 +112,7 @@ const Hero = () => {
               href='https://www.linkedin.com/in/eboreime-thankgod-34864a1b1/'
               rel='noopener noreferrer'
               target='_blank'
+              className='cursor-pointer'
             >
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -133,6 +140,7 @@ const Hero = () => {
               href='https://github.com/Tk-brainCodes'
               rel='noopener noreferrer'
               target='_blank'
+              className='cursor-pointer'
             >
               <motion.button
                 whileHover={{ scale: 1.1 }}
