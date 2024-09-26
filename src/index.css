@@ -8,6 +8,7 @@ body {
   width: 100%;
   height: auto !important;
   overflow-x: hidden;
+  font-family: "PP Neue Montreal";
 }
 * {
   box-sizing: border-box;
