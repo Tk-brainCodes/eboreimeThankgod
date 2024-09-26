@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ThemeContext } from "../../provider/theme.provider";
 import "./About.css";
 import Line from "../Line/Line";
+import { DirectionAwareHover } from "../ui/direction-aware-hover";
 
 import { Element } from "react-scroll";
 
@@ -39,9 +40,9 @@ const About = () => {
         <div className='' style={{ color: `${dark ? "#999" : "black"}` }}>
           <Line>About.</Line>
         </div>
-        <div className='about-container h-fit'>
+        <div className='flex items-start justify-between max-md:flex-col-reverse max-sm:flex-col-reverse h-fit'>
           <div className='title'>
-            <div className='tech-stack'>
+            <div className='tech-stack max-md:-mt-[2em]'>
               <div
                 className='stack-names'
                 style={{ color: `${dark ? "#999" : "black"}` }}
@@ -50,7 +51,7 @@ const About = () => {
               </div>
               <br />
               <div
-                className='stacks'
+                className='stacks leading-8'
                 style={{ color: `${dark ? "#999" : "black"}` }}
               >
                 RestAPI, ReactQuery <br />
@@ -67,11 +68,14 @@ const About = () => {
           </div>
 
           <div
-            className='description w-[100vw] h-auto mb-[20px] text-white flex items-center  gap-[10px] max-sm:flex-wrap'
+            className='w-[100vw] h-auto mb-[20px] text-white max-md:flex-col-reverse flex items-start  gap-[10px] max-sm:flex-wrap '
             style={{ color: `${dark ? "white" : "black"}` }}
           >
-            <div className='my-image w-[80vw] h-[500px] lg:w-[300px] lg:h-[340px] ' />
-            <div className='about-section-text w-full lg:w-[40vw] lg:px-2 lg:py-2'>
+            <DirectionAwareHover>
+              <p className='font-bold text-xl'>Eboreime ThankGod</p>
+              <p className='font-normal text-sm'>Frontend Engineer</p>
+            </DirectionAwareHover>
+            <div className='text-2xl break-normal w-[40vw] max-md:w-[80vw] max-md:mb-[20px] max-md:mt-[20px]'>
               I am a front end engineer who's passionate about working closely
               with both engineers and designers to create exceptional products
               that meet specific needs. With a profound curiosity and passion
