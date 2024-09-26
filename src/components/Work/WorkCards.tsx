@@ -42,7 +42,7 @@ const WorkCards = ({ data }: WorkCardData) => {
       initial='hidden'
       animate={isInView ? "visible" : "hidden"}
       variants={cardVariants}
-      className={`rounded-md w-[380px] max-sm:w-full max-md:w-full relative group transition-all duration-200 ease-in-out opacity-0 group-hover:opacity-100 hover:bg-emerald-700 flex flex-col items-start justify-between px-4 py-4 ${
+      className={`rounded-md w-[380px] max-sm:w-full max-md:w-full relative group transition-all duration-200 ease-in-out opacity-0 group-hover:opacity-100 flex flex-col items-start justify-between px-4 py-4 ${
         dark ? "bg-black" : "bg-white"
       }`}
     >
@@ -59,19 +59,14 @@ const WorkCards = ({ data }: WorkCardData) => {
           <span className='text-xl font-semibold tracking-tighter'>
             {data.name}
           </span>
-          <ArrowUpRight className='group-hover:animate-bounce group-hover:text-white font-normal text-2xl duration-200 transition ease-in-out' />
+          <ArrowUpRight className='group-hover:animate-bounce font-normal group-hover:text-[#88a28d] text-2xl duration-200 transition ease-in-out' />
         </div>
       </a>
 
       <div className='w-full' style={{ color: `${dark ? "white" : "black"}` }}>
         {data.description}
       </div>
-      <div
-        className={cn(
-          "text-sm mt-[20px] text-gray-500 group-hover:text-white",
-          dark && "#999999"
-        )}
-      >
+      <div className={cn("text-sm mt-[20px] text-gray-500", dark && "#999999")}>
         {data.stacks}
       </div>
     </motion.div>
