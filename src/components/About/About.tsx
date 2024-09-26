@@ -40,7 +40,7 @@ const About = () => {
         <div className='' style={{ color: `${dark ? "#999" : "black"}` }}>
           <Line>About.</Line>
         </div>
-        <div className='flex items-start justify-between max-md:flex-col-reverse max-sm:flex-col-reverse h-fit'>
+        <div className='flex items-start justify-between mt-[2em] max-md:flex-col-reverse max-sm:flex-col-reverse h-fit'>
           <div className='title'>
             <div className='tech-stack max-md:-mt-[2em]'>
               <div
