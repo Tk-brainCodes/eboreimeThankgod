@@ -16,6 +16,7 @@ export const PROJECT_DATA = [
     github: "https://github.com/Tk-brainCodes/music-mood",
     live: "https://spotify-music-mood.vercel.app/music",
     image: musciMood,
+    color: "#D8D2C2",
   },
   {
     id: 11,
@@ -27,6 +28,7 @@ export const PROJECT_DATA = [
     github: "https://github.com/Tk-brainCodes/AI-Pantry-Tracker",
     live: "https://ai-inventory-manager.vercel.app/",
     image: pantryTracker,
+    color: "#DEE5D4",
   },
   {
     id: 1,
@@ -38,6 +40,7 @@ export const PROJECT_DATA = [
     github: "https://github.com/Tk-brainCodes/Discord-Clone",
     live: "https://eboreime-thankgod-discord-clone.vercel.app/",
     image: discord,
+    color: "#5865F2",
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ export const PROJECT_DATA = [
     github: "https://github.com/Tk-brainCodes/Movie-Explore",
     live: "https://movie-explore-seven.vercel.app/",
     image: movie,
+    color: "#88a28d",
   },
   {
     id: 7,
@@ -59,15 +63,17 @@ export const PROJECT_DATA = [
     github: "https://github.com/Tk-brainCodes/Crown-Clothing",
     live: "https://crown-clothing-shop.vercel.app/",
     image: clothing,
+    color: "#B17457",
   },
   {
     id: 6,
     name: "Movie Bookmark",
     description:
-      "Code for my article: Creating Your Own Movie Bookmark App with Next 13.4, Redux,Toolkit, Firebase, and Typescript!",
+      "Project for my article: Creating Your Own Movie Bookmark App with Next 13.4, Redux,Toolkit, Firebase, and Typescript!",
     stack: "Next 13.4,Typescript,Tailwind, Firebase, Redux/Redux Toolkit",
     live: "https://movie-bookmark.vercel.app/",
     image: moviebookmark,
     github: "https://github.com/Tk-brainCodes/Movie-Bookmark",
+    color: "#FFD7C4",
   },
 ];
