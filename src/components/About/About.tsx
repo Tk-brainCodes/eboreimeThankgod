@@ -68,7 +68,7 @@ const About = () => {
           </div>
 
           <div
-            className='w-[100vw] h-auto mb-[20px] text-white max-md:flex-col-reverse flex items-start  gap-[10px] max-sm:flex-wrap '
+            className='w-[100vw] h-auto mb-[20px] text-white max-md:flex-col-reverse flex items-start  gap-[20px] max-sm:flex-wrap '
             style={{ color: `${dark ? "white" : "black"}` }}
           >
             <DirectionAwareHover>
