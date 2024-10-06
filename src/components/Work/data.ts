@@ -1,12 +1,33 @@
 export const WORK_DATA = [
   {
+    id: 7,
+    name: "Apparel",
+    description:
+      " A full-stack react `APPAREL` clothing line. Shop easily online, and make payment directly with stripe from your account. ",
+    stacks:
+      " Graphql, Firebase , Typescript, React/Redux, Node.js, Express.js,scss/css, Javascript,Jest, Enzyme",
+    github: "https://github.com/Tk-brainCodes/Crown-Clothing",
+    live: "https://crown-clothing-shop.vercel.app/",
+    color: "#B17457",
+  },
+  {
+    id: 6,
+    name: "Movie Bookmark",
+    description:
+      "Project for my article: Creating Your Own Movie Bookmark App with Next 13.4, Redux,Toolkit, Firebase, and Typescript!",
+    stacks: "Next 13.4,Typescript,Tailwind, Firebase, Redux/Redux Toolkit",
+    live: "https://movie-bookmark.vercel.app/",
+    github: "https://github.com/Tk-brainCodes/Movie-Bookmark",
+    color: "#FFD7C4",
+  },
+  {
     id: 3,
     name: "Vitalis",
     description:
       "A full-stack react application built to locate the nearest labs near you. Book test easily from labs arount you.",
     stacks:
       "Reactjs, Redux, css/scss, Nodejs,Express js,REST APIs, Javascript (ES6+)",
-    link: "https://github.com/Tk-brainCodes/Health-Care",
+    github: "https://github.com/Tk-brainCodes/Health-Care",
   },
   {
     id: 4,
@@ -21,7 +42,7 @@ export const WORK_DATA = [
     name: "WhatsApp Clone",
     description: "A clone of the WhatsApp Web application.",
     stacks: "Reactjs,css/scss,Firebase/Firestore,Javascript (ES6+)",
-    link: "https://github.com/Tk-brainCodes/Whatsapp-Clone",
+    github: "https://github.com/Tk-brainCodes/Whatsapp-Clone",
   },
   {
     id: 6,
