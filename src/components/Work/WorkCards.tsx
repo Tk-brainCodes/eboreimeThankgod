@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ThemeContext } from "../../provider/theme.provider";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 interface WorkCardProp {
   id: number;
@@ -10,6 +11,7 @@ interface WorkCardProp {
   description: string;
   stacks: string;
   link: string;
+  github: string;
 }
 
 interface WorkCardData {
@@ -46,22 +48,34 @@ const WorkCards = ({ data }: WorkCardData) => {
         dark ? "bg-black" : "bg-white"
       }`}
     >
-      <a
-        href={`${data.link}`}
-        rel='noopener noreferrer'
-        className='hover:underline'
-        target='_blank'
-      >
-        <div
-          className='flex items-center justify-between gap-x-2'
-          style={{ color: `${dark ? "white" : "black"}` }}
+      <span className='flex w-full items-center justify-between mb-3'>
+        <a
+          href={`${data.link}`}
+          rel='noopener noreferrer'
+          className='hover:underline'
+          target='_blank'
         >
-          <span className='text-xl font-semibold tracking-tighter'>
-            {data.name}
-          </span>
-          <ArrowUpRight className='group-hover:animate-bounce font-normal group-hover:text-[#88a28d] text-2xl duration-200 transition ease-in-out' />
-        </div>
-      </a>
+          <div
+            className='flex items-center justify-between gap-x-2'
+            style={{ color: `${dark ? "white" : "black"}` }}
+          >
+            <span className='text-xl font-semibold tracking-tighter'>
+              {data.name}
+            </span>
+            <ArrowUpRight className='group-hover:animate-bounce font-normal group-hover:text-[#88a28d] text-2xl duration-200 transition ease-in-out' />
+          </div>
+        </a>
+        {data.github && (
+          <a
+            href={`${data.github}`}
+            rel='noopener noreferrer'
+            className='hover:underline'
+            target='_blank'
+          >
+            <GitHubLogoIcon className='w-[20px] h-[20px] text-white group-hover:text-[#88a28d]' />{" "}
+          </a>
+        )}
+      </span>
 
       <div className='w-full' style={{ color: `${dark ? "white" : "black"}` }}>
         {data.description}
