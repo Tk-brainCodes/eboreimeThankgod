@@ -4,6 +4,7 @@ import moviebookmark from "../../assets/images/view.png";
 import discord from "../../assets/images/discord-image.svg";
 import musciMood from "../../assets/images/demo-pic.png";
 import pantryTracker from "../../assets/images/pantry.png";
+import Mindflash from "../../assets/images/mindflash.png";
 
 export const PROJECT_DATA = [
   {
@@ -17,7 +18,22 @@ export const PROJECT_DATA = [
     live: "https://spotify-music-mood.vercel.app/music",
     image: musciMood,
     color: "#D8D2C2",
+    youtube: "https://youtu.be/2GyiwB4ESSI",
   },
+  {
+    id: 15,
+    name: "Mind Flash",
+    description:
+      "This AI-powered flashcard application leverages cutting-edge natural language processing to automatically generate study materials from any text input. Built with Next.js, TypeScript, and integrated with Groq AI, this app offers a modern, efficient way to create and study flashcards.",
+    stack:
+      "Next.js 14, TypeScript, Prisma, Supabase, shadcn UI, Google Gemini AI",
+    github: "https://github.com/Tk-brainCodes/mind-flash",
+    live: "https://mind-flash.vercel.app/",
+    image: Mindflash,
+    color: "#E7CCCC",
+    youtube: "https://youtu.be/RTscxsvkQZQ",
+  },
+
   {
     id: 11,
     name: "AI Pantry Tracker",
@@ -27,6 +43,7 @@ export const PROJECT_DATA = [
       "Next js, TypeScript, Firebase (Firestore and Storage), Material-UI (MUI), React Camera Pro, Google Generative AI via Langchain.",
     github: "https://github.com/Tk-brainCodes/AI-Pantry-Tracker",
     live: "https://ai-inventory-manager.vercel.app/",
+    youtube: "https://youtu.be/oy_uNTiHhik",
     image: pantryTracker,
     color: "#DEE5D4",
   },
@@ -39,6 +56,7 @@ export const PROJECT_DATA = [
       "Nextjs, TailwindCss, Framer Motion, Typescript, Prisma, PlanetScale db (MYSQL), Context API",
     github: "https://github.com/Tk-brainCodes/Discord-Clone",
     live: "https://eboreime-thankgod-discord-clone.vercel.app/",
+    youtube: "https://youtu.be/ZhQr8tWJYhk",
     image: discord,
     color: "#5865F2",
   },
@@ -52,6 +70,7 @@ export const PROJECT_DATA = [
     live: "https://movie-explore-seven.vercel.app/",
     image: movie,
     color: "#88a28d",
+    youtube: "https://youtu.be/i1c2oULkqxE",
   },
   {
     id: 7,

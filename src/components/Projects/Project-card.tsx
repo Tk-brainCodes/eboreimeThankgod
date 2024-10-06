@@ -1,47 +1,73 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import React, { memo, useRef, useState } from "react";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { GitHubLogoIcon, Link1Icon } from "@radix-ui/react-icons";
+import PlayVideo from "../../assets/images/play.svg";
+import { Loader } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import ReactPlayer from "react-player";
 
-export function ProjectCard({
+interface ProjectData {
+  id: number;
+  name: string;
+  description: string;
+  live: string;
+  github: string;
+  color: string;
+  stack: string;
+  image: string;
+  youtube: string;
+}
+
+interface ProjectCardProps extends ProjectData {
+  range: [number, number];
+  targetScale: number;
+  progress: MotionValue<number>;
+  i: number;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
   description,
   live,
   github,
   color,
+  youtube,
   stack,
   image,
   range,
   targetScale,
   progress,
   i,
-}: {
-  id: number;
-  name: string;
-  description: string;
-  live: string;
-  color: string;
-  stack: string;
-  github: string;
-  image: string;
-  range: number[];
-  targetScale: number;
-  progress: any;
-  i: number;
-}) {
-  const container = useRef(null);
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false); // State for loading the video
+
+  // Use Framer Motion's useScroll to track the scroll progress of the container
   const { scrollYProgress } = useScroll({
-    target: container,
+    target: containerRef,
     offset: ["start end", "start start"],
   });
+
+  // Transform the image scale based on scroll progress
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+
+  // Transform the card scale based on the global scroll progress and the specified range
   const scale = useTransform(progress, range, [1, targetScale]);
+
+  const handleDialogOpen = () => {
+    setLoading(true); // Show loading when the dialog opens
+  };
+
+  const handleVideoReady = () => {
+    setLoading(false); // Hide loading when the video is ready
+  };
 
   return (
     <div
-      ref={container}
+      ref={containerRef}
       className='cardContainer h-screen flex items-center justify-center sticky top-0'
     >
       <motion.div
@@ -78,17 +104,54 @@ export function ProjectCard({
               </a>
             </span>
           </div>
-          <div className='imgContainer relative w-[60%] h-full rounded-3xl overflow-hidden'>
-            <motion.div style={{ scale: imageScale }} className='w-full h-full'>
-              <img
-                src={image}
-                alt='image'
-                className='object-cover w-full h-full'
-              />
-            </motion.div>
-          </div>
+          <Dialog onOpenChange={handleDialogOpen}>
+            <DialogTrigger>
+              <div className='imgContainer relative w-[500px] h-[300px] rounded-3xl overflow-hidden'>
+                <motion.div
+                  style={{ scale: imageScale }}
+                  className='w-full h-full relative'
+                >
+                  <img
+                    src={image}
+                    alt='image'
+                    className='object-cover w-full h-full'
+                  />
+                  {/* Conditional rendering of Play or Login icon */}
+                  <div className='absolute inset-0 flex items-center justify-center cursor-pointer'>
+                    <img
+                      src={PlayVideo} // Play icon if video has not started
+                      alt='play_video'
+                      className='h-20 w-20 text-white opacity-75 hover:opacity-100 transition-opacity duration-300'
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            </DialogTrigger>
+            <DialogContent className='w-full max-w-[90%] md:max-w-[80%] lg:max-w-[60%] h-auto p-4 rounded-lg'>
+              <div className='w-full h-auto relative'>
+                {/* Show loading icon until the video is ready */}
+                {loading && (
+                  <div className='absolute inset-0 flex items-center justify-center'>
+                    <Loader
+                      className={`h-16 w-16 animate-spin text-[#${color}]`}
+                    />
+                  </div>
+                )}
+                <ReactPlayer
+                  url={youtube}
+                  width='100%'
+                  height='400px'
+                  controls={true}
+                  onReady={handleVideoReady} // Hide loading icon when video is ready
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </motion.div>
     </div>
   );
-}
+};
+
+// Export the memoized component to prevent unnecessary re-renders
+export default memo(ProjectCard);
