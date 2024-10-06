@@ -1,6 +1,4 @@
-import clothing from "../../assets/images/clothing-line.png";
 import movie from "../../assets/images/movie-explore.png";
-import moviebookmark from "../../assets/images/view.png";
 import discord from "../../assets/images/discord-image.svg";
 import musciMood from "../../assets/images/demo-pic.png";
 import pantryTracker from "../../assets/images/pantry.png";
@@ -38,7 +36,7 @@ export const PROJECT_DATA = [
     id: 11,
     name: "AI Pantry Tracker",
     description:
-      "Pantry Tracker is a web application that helps you manage your pantry items efficiently. Keep track of your food inventory, monitor expiry dates, and upload images of your items for easy identification usin AI.",
+      "Pantry Tracker is a web application that helps you manage your pantry items efficiently. Keep track of your food inventory, monitor expiry dates, and upload images of your items for easy identification using AI.",
     stack:
       "Next js, TypeScript, Firebase (Firestore and Storage), Material-UI (MUI), React Camera Pro, Google Generative AI via Langchain.",
     github: "https://github.com/Tk-brainCodes/AI-Pantry-Tracker",
@@ -71,28 +69,5 @@ export const PROJECT_DATA = [
     image: movie,
     color: "#88a28d",
     youtube: "https://youtu.be/i1c2oULkqxE",
-  },
-  {
-    id: 7,
-    name: "Apparel",
-    description:
-      " A full-stack react `APPAREL` clothing line. Shop easily online, and make payment directly with stripe from your account. ",
-    stack:
-      " Graphql, Firebase , Typescript, React/Redux, Node.js, Express.js,scss/css, Javascript,Jest, Enzyme",
-    github: "https://github.com/Tk-brainCodes/Crown-Clothing",
-    live: "https://crown-clothing-shop.vercel.app/",
-    image: clothing,
-    color: "#B17457",
-  },
-  {
-    id: 6,
-    name: "Movie Bookmark",
-    description:
-      "Project for my article: Creating Your Own Movie Bookmark App with Next 13.4, Redux,Toolkit, Firebase, and Typescript!",
-    stack: "Next 13.4,Typescript,Tailwind, Firebase, Redux/Redux Toolkit",
-    live: "https://movie-bookmark.vercel.app/",
-    image: moviebookmark,
-    github: "https://github.com/Tk-brainCodes/Movie-Bookmark",
-    color: "#FFD7C4",
   },
 ];
