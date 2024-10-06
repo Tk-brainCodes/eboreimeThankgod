@@ -5,13 +5,13 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
-interface WorkCardProp {
+export interface WorkCardProp {
   id: number;
   name: string;
   description: string;
   stacks: string;
-  link: string;
-  github: string;
+  link?: string;
+  github?: string;
 }
 
 interface WorkCardData {

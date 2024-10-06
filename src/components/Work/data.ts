@@ -7,8 +7,7 @@ export const WORK_DATA = [
     stacks:
       " Graphql, Firebase , Typescript, React/Redux, Node.js, Express.js,scss/css, Javascript,Jest, Enzyme",
     github: "https://github.com/Tk-brainCodes/Crown-Clothing",
-    live: "https://crown-clothing-shop.vercel.app/",
-    color: "#B17457",
+    link: "https://crown-clothing-shop.vercel.app/",
   },
   {
     id: 6,
@@ -16,9 +15,8 @@ export const WORK_DATA = [
     description:
       "Project for my article: Creating Your Own Movie Bookmark App with Next 13.4, Redux,Toolkit, Firebase, and Typescript!",
     stacks: "Next 13.4,Typescript,Tailwind, Firebase, Redux/Redux Toolkit",
-    live: "https://movie-bookmark.vercel.app/",
+    link: "https://movie-bookmark.vercel.app/",
     github: "https://github.com/Tk-brainCodes/Movie-Bookmark",
-    color: "#FFD7C4",
   },
   {
     id: 3,
