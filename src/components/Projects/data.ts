@@ -25,6 +25,8 @@ export const PROJECT_DATA = [
     name: "Gemini Clone",
     description:
       "A conversational application powered by the Google Gemini LLM, featuring advanced functionality such as audio messaging, message transcription, and the ability to upload and interact with images within the conversation. The app also includes mood-based themes for a personalized user experience, and allows users to update prompts, edit chats, and delete conversations, offering full control over the chat history.",
+    stack:
+      "Nextjs, React js, Redux, Framer-Motion, Cypress, ShadCN UI, Prisma (ORM), Supabase. ",
     github: "https://github.com/Tk-brainCodes/Gemini-Clone-Nextjs",
     live: "https://eboreime-thankgod-gemini-clone.vercel.app/",
     color: "#FFEEAD",
