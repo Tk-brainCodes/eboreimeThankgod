@@ -3,6 +3,7 @@ import discord from "../../assets/images/discord-image.svg";
 import musciMood from "../../assets/images/demo-pic.png";
 import pantryTracker from "../../assets/images/pantry.png";
 import Mindflash from "../../assets/images/mindflash.png";
+import Gemini from "../../assets/images/gemini.png";
 
 export const PROJECT_DATA = [
   {
@@ -17,6 +18,18 @@ export const PROJECT_DATA = [
     image: musciMood,
     color: "#D8D2C2",
     youtube: "https://youtu.be/2GyiwB4ESSI",
+  },
+
+  {
+    id: 17,
+    name: "Gemini Clone",
+    description:
+      "A conversational application powered by the Google Gemini LLM, featuring advanced functionality such as audio messaging, message transcription, and the ability to upload and interact with images within the conversation. The app also includes mood-based themes for a personalized user experience, and allows users to update prompts, edit chats, and delete conversations, offering full control over the chat history.",
+    github: "https://github.com/Tk-brainCodes/Gemini-Clone-Nextjs",
+    live: "https://eboreime-thankgod-gemini-clone.vercel.app/",
+    color: "#FFEEAD",
+    image: Gemini,
+    youtube: "",
   },
   {
     id: 15,
