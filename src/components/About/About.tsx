@@ -14,14 +14,15 @@ const About = () => {
 
   const cardVariants = {
     hidden: {
+      y: 50,
       opacity: 0,
-      scale: 0.8,
     },
     visible: {
+      y: 0,
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 0.5,
+        delay: 0.3,
+        duration: 0.4,
       },
     },
   };
@@ -71,10 +72,16 @@ const About = () => {
             className='w-[100vw] h-auto mb-[20px] text-white max-md:flex-col-reverse flex items-start  gap-[20px] max-sm:flex-wrap '
             style={{ color: `${dark ? "white" : "black"}` }}
           >
-            <DirectionAwareHover>
-              <p className='font-bold text-xl'>Eboreime ThankGod</p>
-              <p className='font-normal text-sm'>Frontend Engineer</p>
-            </DirectionAwareHover>
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <DirectionAwareHover>
+                <p className='font-bold text-xl'>Eboreime ThankGod</p>
+                <p className='font-normal text-sm'>Frontend Engineer</p>
+              </DirectionAwareHover>
+            </motion.div>
             <div className='text-2xl break-normal w-[40vw] max-md:w-[80vw] max-md:mb-[20px] max-md:mt-[20px]'>
               I am a front end engineer who's passionate about working closely
               with both engineers and designers to create exceptional products
