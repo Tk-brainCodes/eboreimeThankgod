@@ -35,16 +35,19 @@ const Hero = () => {
               variants={containerVariant}
               animate='visible'
               initial='hidden'
-              className='sub-text  h-full  mt-[7em] max-md:mt-0 max-sm:mt-0'
+              className='sub-text mt-[2em] h-full max-md:mt-0 max-sm:mt-0'
             >
               <div className='stars'>***</div>
               <motion.div
                 className='hero-text lg:w-[55vw] w-full break-normal z-10'
                 style={{ color: `${dark ? "white" : "black"}` }}
               >
-                I have a passion, for developing software applications and
-                leveraging AI and large language models (LLMs) to create
-                innovative solutions.
+                Creative Frontend Enginner with
+                <span className='gradient-text'> 4 years </span> of
+                experience in building visually stunning and user-friendly
+                applications. I specialize in delivering scalable, accessible
+                solutions that not only meet client needs but also drive
+                impactful business results.
               </motion.div>
             </motion.div>
           </motion.div>
@@ -53,7 +56,7 @@ const Hero = () => {
         <div className='social-handles z-10 flex items-end justify-end h-[100vh] max-md:h-auto  max-sm:h-auto max-md:px-[3em] max-md:mt-[2em]'>
           <div className='button-container'>
             <a
-              href='https://drive.google.com/file/d/11NKyw1Oew7IJ-keeKKWft-48Fx5NpYnq/view?usp=sharing'
+              href='https://drive.google.com/file/d/1BL5cn3xjl_F7hTrz1mfs_Hu5kCEFgDFc/view?usp=sharing'
               rel='noopener noreferrer'
               target='_blank'
               className='cursor-pointer'
