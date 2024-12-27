@@ -42,12 +42,9 @@ const Hero = () => {
                 className='hero-text lg:w-[55vw] w-full break-normal z-10'
                 style={{ color: `${dark ? "white" : "black"}` }}
               >
-                Creative Frontend Enginner with
-                <span className='gradient-text'> 4 years </span> of
-                experience in building visually stunning and user-friendly
+                Creative Frontend Enginner with experience in building visually stunning and user-friendly
                 applications. I specialize in delivering scalable, accessible
-                solutions that not only meet client needs but also drive
-                impactful business results.
+                solutions.
               </motion.div>
             </motion.div>
           </motion.div>
