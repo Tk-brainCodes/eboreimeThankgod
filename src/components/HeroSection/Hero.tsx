@@ -42,9 +42,9 @@ const Hero = () => {
                 className='hero-text lg:w-[55vw] w-full break-normal z-10'
                 style={{ color: `${dark ? "white" : "black"}` }}
               >
-                Creative Frontend Enginner with experience in building visually stunning and user-friendly
-                applications. I specialize in delivering scalable, accessible
-                solutions.
+                Creative Software developer with experience in building visually
+                stunning and user-friendly applications. I specialize in
+                delivering scalable, accessible solutions.
               </motion.div>
             </motion.div>
           </motion.div>
@@ -53,7 +53,7 @@ const Hero = () => {
         <div className='social-handles z-10 flex items-end justify-end h-[100vh] max-md:h-auto  max-sm:h-auto max-md:px-[3em] max-md:mt-[2em]'>
           <div className='button-container'>
             <a
-              href='https://drive.google.com/file/d/1BL5cn3xjl_F7hTrz1mfs_Hu5kCEFgDFc/view?usp=sharing'
+              href='https://drive.google.com/file/d/1J9NijuEyqw6YD1-9Y4gPP2RR5f0A2Ztx/view?usp=sharing'
               rel='noopener noreferrer'
               target='_blank'
               className='cursor-pointer'
