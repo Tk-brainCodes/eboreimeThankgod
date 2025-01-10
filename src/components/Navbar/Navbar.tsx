@@ -98,7 +98,7 @@ const Navbar = () => {
                   className='frontend-engineer'
                   style={{ color: `${dark ? "white" : "black"}` }}
                 >
-                  Frontend Engineer
+                  Software Developer
                 </div>
               </Line>
             </div>
