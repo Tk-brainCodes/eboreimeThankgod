@@ -42,7 +42,7 @@ const Hero = () => {
                 className='hero-text lg:w-[55vw] w-full break-normal z-10'
                 style={{ color: `${dark ? "white" : "black"}` }}
               >
-                Creative Software developer with experience in building visually
+                Creative Software Developer with experience in building visually
                 stunning and user-friendly applications. I specialize in
                 delivering scalable, accessible solutions.
               </motion.div>
