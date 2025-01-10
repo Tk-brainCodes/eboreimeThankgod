@@ -83,7 +83,7 @@ const About = () => {
               </DirectionAwareHover>
             </motion.div>
             <div className='text-2xl break-normal w-[40vw] max-md:w-[80vw] max-md:mb-[20px] max-md:mt-[20px]'>
-              I am a front end engineer who's passionate about working closely
+              I am a Software Developer who's passionate about working closely
               with both engineers and designers to create exceptional products
               that meet specific needs. With a profound curiosity and passion
               for continuous learning, I embrace emerging technologies and seek
