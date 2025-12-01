@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeContext } from "../../provider/theme.provider";
 import { Link } from "react-scroll";

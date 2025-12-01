@@ -4,12 +4,14 @@
   width: 50vw;
   height: auto;
 }
+
 .hero-section img {
   position: absolute;
   width: 80vw;
   height: 100vh;
   object-fit: cover;
 }
+
 .sub-text {
   line-height: 30px;
   font-size: 0.8em;
@@ -17,9 +19,11 @@
   display: grid;
   width: 85vw;
 }
+
 h1 {
   font-size: 1.3em;
 }
+
 .stars {
   margin-top: 100px;
   font-style: normal;
@@ -27,34 +31,16 @@ h1 {
   font-size: 60px;
   line-height: 110%;
   padding: 0px 35px;
-  background: linear-gradient(
-    91.98deg,
-    #f87ea2 -9.89%,
-    #ff9b64 14.53%,
-    #fbf190 44.6%,
-    #cff3a1 68.58%,
-    #a3f7bb 86.27%,
-    #a3f7f2 97.24%
-  );
+  background: linear-gradient(91.98deg,
+      #f87ea2 -9.89%,
+      #ff9b64 14.53%,
+      #fbf190 44.6%,
+      #cff3a1 68.58%,
+      #a3f7bb 86.27%,
+      #a3f7f2 97.24%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.gradient-text {
-  background: linear-gradient(
-    91.98deg,
-    #f87ea2 -9.89%,
-    #ff9b64 14.53%,
-    #fbf190 44.6%,
-    #cff3a1 68.58%,
-    #a3f7bb 86.27%,
-    #a3f7f2 97.24%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 
 .hero-text {
@@ -67,16 +53,19 @@ h1 {
   padding: 0px 35px;
   width: 100%;
 }
+
 .social-handles {
   border-left: 1px solid #262626;
   padding: 20px;
 }
+
 .button-container {
   width: 150px;
   height: auto !important;
   display: block;
   margin-top: 26em;
 }
+
 .link-button {
   font-family: "PP Neue Montreal";
   font-style: normal;
@@ -94,13 +83,16 @@ h1 {
   display: flex;
   gap: 3px;
 }
+
 @media only screen and (max-width: 768px) {
   .hero-text {
     font-size: 2.2em;
   }
+
   .hero-section img {
     display: none;
   }
+
   .social-handles {
     width: auto !important;
     height: inherit;
@@ -110,6 +102,7 @@ h1 {
     justify-content: center;
     font-size: 0.8em;
   }
+
   .button-container {
     width: 100vw;
     height: 50px;
@@ -120,11 +113,13 @@ h1 {
     gap: 10px;
     margin: 0;
   }
+
   .hero-section {
     display: block;
     position: none;
   }
 }
+
 @media only screen and (max-width: 600px) {
   .hero-text {
     font-size: 2em;
