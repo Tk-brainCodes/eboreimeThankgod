@@ -4,6 +4,7 @@ import musciMood from "../../assets/images/demo-pic.png";
 import pantryTracker from "../../assets/images/pantry.png";
 import Mindflash from "../../assets/images/mindflash.png";
 import Gemini from "../../assets/images/gemini.png";
+import Envirotrust from '../../assets/images/envirotrust.png'
 
 export const PROJECT_DATA = [
   {
@@ -19,7 +20,18 @@ export const PROJECT_DATA = [
     color: "#D8D2C2",
     youtube: "https://youtu.be/2GyiwB4ESSI",
   },
-
+  {
+    id: 3,
+    name: "Movie Explore",
+    description:
+      "Get Latest and Trending Movies, also customize your movie profile and mark movies watched, add movies to watch list.",
+    stack: "Next js(13), Typescript, Firebase, React, Redux, Cypress ",
+    github: "https://github.com/Tk-brainCodes/Movie-Explore",
+    live: "https://movie-explore-seven.vercel.app/",
+    image: movie,
+    color: "#88a28d",
+    youtube: "https://youtu.be/i1c2oULkqxE",
+  },
   {
     id: 17,
     name: "Gemini Clone",
@@ -34,20 +46,6 @@ export const PROJECT_DATA = [
     youtube: "",
   },
   {
-    id: 15,
-    name: "Mind Flash",
-    description:
-      "This AI-powered flashcard application leverages cutting-edge natural language processing to automatically generate study materials from any text input. Built with Next.js, TypeScript, and integrated with Groq AI, this app offers a modern, efficient way to create and study flashcards.",
-    stack:
-      "Next.js 14, TypeScript, Prisma, Supabase, shadcn UI, Google Gemini AI",
-    github: "https://github.com/Tk-brainCodes/mind-flash",
-    live: "https://mind-flash.vercel.app/",
-    image: Mindflash,
-    color: "#E7CCCC",
-    youtube: "https://youtu.be/RTscxsvkQZQ",
-  },
-
-  {
     id: 11,
     name: "AI Pantry Tracker",
     description:
@@ -59,6 +57,19 @@ export const PROJECT_DATA = [
     youtube: "https://youtu.be/oy_uNTiHhik",
     image: pantryTracker,
     color: "#DEE5D4",
+  },
+  {
+    id: 15,
+    name: "Mind Flash",
+    description:
+      "This AI-powered flashcard application leverages cutting-edge natural language processing to automatically generate study materials from any text input. Built with Next.js, TypeScript, and integrated with Groq AI, this app offers a modern, efficient way to create and study flashcards.",
+    stack:
+      "Next.js 14, TypeScript, Prisma, Supabase, shadcn UI, Google Gemini AI",
+    github: "https://github.com/Tk-brainCodes/mind-flash",
+    live: "https://mind-flash.vercel.app/",
+    image: Mindflash,
+    color: "#E7CCCC",
+    youtube: "https://youtu.be/RTscxsvkQZQ",
   },
   {
     id: 1,
@@ -73,16 +84,17 @@ export const PROJECT_DATA = [
     image: discord,
     color: "#5865F2",
   },
-  {
-    id: 3,
-    name: "Movie Explore",
-    description:
-      "Get Latest and Trending Movies, also customize your movie profile and mark movies watched, add movies to watch list.",
-    stack: "Next js(13), Typescript, Firebase, React, Redux, Cypress ",
-    github: "https://github.com/Tk-brainCodes/Movie-Explore",
-    live: "https://movie-explore-seven.vercel.app/",
-    image: movie,
-    color: "#88a28d",
-    youtube: "https://youtu.be/i1c2oULkqxE",
-  },
+
 ];
+
+
+export const FEATURE_WORK = [
+  {
+    name: "Envirotrust",
+    description: "This is a weather-insights web application for EnviroTrust, making environmental risks visible, understandable, and actionable.It turns complex climate data floods, heatwaves, wildfires into clear, interactive maps. The platform helps users make informed decisions with accessible, science-based insights. It empowers people, protects investments, and supports climate-resilient communities.",
+    github: "",
+    live: "https://envirotrust.eu/",
+    image: Envirotrust,
+    color: "",
+  }
+]

@@ -1,28 +1,4 @@
-.dark-mode {
-  width: auto !important;
-  padding: 5px;
-  background: white;
-  color: #262626;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-.light-mode {
-  width: auto !important;
-  padding: 5px;
-  background: #333232;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-.light-dark-mode {
-  cursor: pointer;
-}
+/* Toggle styles now handled inline in Toggle.tsx component */
 .logo {
   width: auto !important;
   height: inherit;
@@ -37,6 +13,7 @@
   flex-flow: column;
   cursor: pointer;
 }
+
 .frontend-engineer {
   font-family: "PP Neue Montreal";
   font-style: normal;
@@ -44,6 +21,7 @@
   font-size: 20px;
   color: #fafafa;
 }
+
 li {
   cursor: pointer;
   display: flex;
@@ -51,15 +29,18 @@ li {
   justify-content: space-between;
   color: #999999;
 }
+
 #number {
   font-size: 0.7em;
   margin-right: 10px;
   color: white;
 }
+
 .social-handles-nav {
   width: auto !important;
   height: auto !important;
 }
+
 .button-container-nav {
   width: auto !important;
   height: auto;
@@ -69,14 +50,17 @@ li {
   gap: 20px;
   margin-top: 3em;
 }
+
 .active {
   color: #6d8b74;
   font-weight: bold;
 }
+
 @media only screen and (max-width: 768px) {
   .logo {
     width: auto !important;
   }
+
   li {
     font-size: 1.5em;
   }

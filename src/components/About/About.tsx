@@ -1,98 +1,47 @@
-import { useContext, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useContext } from "react";
 import { ThemeContext } from "../../provider/theme.provider";
-import "./About.css";
-import Line from "../Line/Line";
-import { DirectionAwareHover } from "../ui/direction-aware-hover";
-
+import { motion } from "framer-motion";
 import { Element } from "react-scroll";
 
 const About = () => {
   const { dark } = useContext(ThemeContext);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.5, once: true });
 
-  const cardVariants = {
-    hidden: {
-      y: 50,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.4,
-      },
-    },
-  };
+
 
   return (
-    <Element
-      name='about'
-      className='About w-[100vw] px-[35px] py-[40px] h-auto'
-    >
+    <Element name="about" className="w-full px-6 md:px-20 py-20">
       <motion.div
-        ref={ref}
-        initial='hidden'
-        animate={isInView ? "visible" : "hidden"}
-        variants={cardVariants}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row gap-20"
       >
-        <div className='' style={{ color: `${dark ? "#999" : "black"}` }}>
-          <Line>About.</Line>
-        </div>
-        <div className='flex items-start justify-between mt-[2em] max-md:flex-col-reverse max-sm:flex-col-reverse h-fit'>
-          <div className='title'>
-            <div className='tech-stack max-md:-mt-[2em]'>
-              <div
-                className='stack-names'
-                style={{ color: `${dark ? "#999" : "black"}` }}
-              >
-                <div className='star'>***</div> Tech Stack
-              </div>
-              <br />
-              <div
-                className='stacks leading-8'
-                style={{ color: `${dark ? "#999" : "black"}` }}
-              >
-                RestAPI, ReactQuery <br />
-                Typescript, Langchain, LLM (Large Language Models) React/Redux,{" "}
-                <br /> Node.js, Express.js,
-                <br />
-                Next.js (13+), Git, <br />
-                Github, Tailwind CSS
-                <br />
-                HTML5, CSS3/SCSS,
-                <br /> Javascript (es6)
-              </div>
-            </div>
-          </div>
-
-          <div
-            className='w-[100vw] h-auto mb-[20px] text-white max-md:flex-col-reverse flex items-start  gap-[20px] max-sm:flex-wrap '
-            style={{ color: `${dark ? "white" : "black"}` }}
+        <div className="md:w-1/3">
+          <h2
+            className={`text-[4vw] leading-none font-medium ${
+              dark ? "text-white" : "text-black"
+            }`}
           >
-            <motion.div
-              initial={{ y: -50, opacity: 0 }}
-              animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <DirectionAwareHover>
-                <p className='font-bold text-xl'>Eboreime ThankGod</p>
-                <p className='font-normal text-sm'>Frontend Engineer</p>
-              </DirectionAwareHover>
-            </motion.div>
-            <div className='text-2xl break-normal w-[40vw] max-md:w-[80vw] max-md:mb-[20px] max-md:mt-[20px]'>
-              I am a Software Developer who's passionate about working closely
-              with both engineers and designers to create exceptional products
-              that meet specific needs. With a profound curiosity and passion
-              for continuous learning, I embrace emerging technologies and seek
-              challenges in the front-end landscape.
-            </div>
-          </div>
+            About
+          </h2>
+        </div>
+
+        <div className="md:w-2/3 flex flex-col gap-12">
+          <p
+            className={`text-2xl md:text-4xl leading-tight font-light ${
+              dark ? "text-white" : "text-black"
+            }`}
+          >
+            I am a Software Developer passionate about bridging the gap between engineering and design. 
+            I build exceptional products that are not only functional but also visually compelling.
+          </p>
+
+
         </div>
       </motion.div>
     </Element>
   );
 };
+
 export default About;

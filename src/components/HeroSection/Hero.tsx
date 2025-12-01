@@ -1,173 +1,68 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../provider/theme.provider";
-import "./HeroSection.css";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
-import { BackgroundLines } from "@/components/ui/background-lines";
-
-const containerVariant = {
-  hidden: {
-    y: 50,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.3,
-      duration: 0.4,
-    },
-  },
-};
 
 const Hero = () => {
   const { dark } = useContext(ThemeContext);
 
   return (
-    <>
-      <Element
-        name='home'
-        className='w-[100vw] flex items-start justify-between h-[100vh] max-md:h-auto flex-row max-md:flex-col max-sm:flex-col  '
-      >
-        <BackgroundLines className=' w-[50vw] '>
-          <motion.div variants={containerVariant} className='text  '>
-            <motion.div
-              variants={containerVariant}
-              animate='visible'
-              initial='hidden'
-              className='sub-text mt-[2em] h-full max-md:mt-0 max-sm:mt-0'
-            >
-              <div className='stars'>***</div>
-              <motion.div
-                className='hero-text lg:w-[55vw] w-full break-normal z-10'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Creative Software Developer with experience in building visually
-                stunning and user-friendly applications. I specialize in
-                delivering scalable, accessible solutions.
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </BackgroundLines>
+    <Element
+      name="home"
+      className="relative w-full min-h-screen flex flex-col justify-center px-6 md:px-20 overflow-hidden pt-20"
+    >
+      <div className="z-10 flex flex-col gap-6">
+        <motion.h1
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className={`text-[12vw] leading-[0.85] font-medium tracking-tighter ${
+            dark ? "text-white" : "text-black"
+          }`}
+        >
+          Creative
+          <br />
+          Developer
+        </motion.h1>
 
-        <div className='social-handles z-10 flex items-end justify-end h-[100vh] max-md:h-auto  max-sm:h-auto max-md:px-[3em] max-md:mt-[2em]'>
-          <div className='button-container'>
-            <a
-              href='https://drive.google.com/file/d/1J9NijuEyqw6YD1-9Y4gPP2RR5f0A2Ztx/view?usp=sharing'
-              rel='noopener noreferrer'
-              target='_blank'
-              className='cursor-pointer'
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className='link-button'
-                style={{ color: `${dark ? "white" : "black"}` }}
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end w-full max-w-[90vw] mt-8"
+        >
+          <p
+            className={`text-lg md:text-2xl max-w-xl leading-relaxed ${
+              dark ? "text-gray-400" : "text-gray-600"
+            }`}
+          >
+            Specializing in building visually stunning, robust accessible, and
+            performant <span className="font-bold">web</span> and <span className="font-bold">mobile</span> experiences.
+          </p>
+
+          <div className="flex gap-8 mt-8 md:mt-0">
+            {[
+              { name: "Resume", link: "https://drive.google.com/file/d/1dEYa0ynrWga8hRoI7D5YLHw2TMEthwJV/view?usp=sharing" },
+              { name: "GitHub", link: "https://github.com/Tk-brainCodes" },
+              { name: "LinkedIn", link: "https://www.linkedin.com/in/eboreime-thankgod-34864a1b1/" },
+              // { name: "Twitter", link: "https://www.twitter.com/tkworldclass" },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-sm uppercase tracking-widest hover:underline underline-offset-4 ${
+                  dark ? "text-white" : "text-black"
+                }`}
               >
-                Resume
-                <svg
-                  width='16'
-                  height='15'
-                  viewBox='0 0 16 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                    stroke='#999999'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  />
-                </svg>{" "}
-              </motion.button>
-            </a>
-            <a
-              href='https://www.twitter.com/tkworldclass'
-              rel='noopener noreferrer'
-              target='_blank'
-              className='cursor-pointer'
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className='link-button'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Twitter
-                <svg
-                  width='16'
-                  height='15'
-                  viewBox='0 0 16 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                    stroke='#999999'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  />
-                </svg>
-              </motion.button>
-            </a>
-            <a
-              href='https://www.linkedin.com/in/eboreime-thankgod-34864a1b1/'
-              rel='noopener noreferrer'
-              target='_blank'
-              className='cursor-pointer'
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className='link-button'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Linkedin
-                <svg
-                  width='16'
-                  height='15'
-                  viewBox='0 0 16 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                    stroke='#999999'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  />
-                </svg>{" "}
-              </motion.button>
-            </a>
-            <a
-              href='https://github.com/Tk-brainCodes'
-              rel='noopener noreferrer'
-              target='_blank'
-              className='cursor-pointer'
-            >
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                className='link-button'
-                style={{ color: `${dark ? "white" : "black"}` }}
-              >
-                Github
-                <svg
-                  width='16'
-                  height='15'
-                  viewBox='0 0 16 15'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    d='M3.33333 0.5H15V12.1667M15 0.5L1 14.5L15 0.5Z'
-                    stroke='#999999'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  />
-                </svg>
-              </motion.button>
-            </a>
+                {item.name}
+              </a>
+            ))}
           </div>
-        </div>
-      </Element>
-    </>
+        </motion.div>
+      </div>
+    </Element>
   );
 };
 
