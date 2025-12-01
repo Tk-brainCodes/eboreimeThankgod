@@ -44,7 +44,7 @@ const Hero = () => {
             {[
               { name: "Resume", link: "https://drive.google.com/file/d/1dEYa0ynrWga8hRoI7D5YLHw2TMEthwJV/view?usp=sharing" },
               { name: "GitHub", link: "https://github.com/Tk-brainCodes" },
-              { name: "LinkedIn", link: "https://www.linkedin.com/in/eboreime-thankgod-34864a1b1/" },
+              { name: "LinkedIn", link: "https://www.linkedin.com/in/thankgod-eboreime-34864a1b1/" },
               // { name: "Twitter", link: "https://www.twitter.com/tkworldclass" },
             ].map((item) => (
               <a
