@@ -5,6 +5,7 @@ import pantryTracker from "../../assets/images/pantry.png";
 import Mindflash from "../../assets/images/mindflash.png";
 import Gemini from "../../assets/images/gemini.png";
 import Envirotrust from '../../assets/images/envirotrust.png'
+import Outfitted from '../../assets/images/outfitted.jpg'
 
 export const PROJECT_DATA = [
   {
@@ -95,6 +96,14 @@ export const FEATURE_WORK = [
     github: "",
     live: "https://envirotrust.eu/",
     image: Envirotrust,
+    color: "",
+  },
+  {
+    name: "Outfitted",
+    description: "Outfitted is a mobile fashion discovery and e-commerce platform that blends social inspiration with seamless shopping, allowing users to explore creator-tagged outfits and purchase directly from curated looks. The product focuses on personalized style discovery, creator engagement, and effortless checkout to deliver a modern, interactive fashion experience.",
+    github: "",
+    live: "https://www.outfitted.me/",
+    image: Outfitted,
     color: "",
   }
 ]
