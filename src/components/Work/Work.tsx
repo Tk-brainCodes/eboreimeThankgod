@@ -3,13 +3,44 @@ import { ThemeContext } from "../../provider/theme.provider";
 import { Element } from "react-scroll";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { PROJECT_DATA, FEATURE_WORK } from "../Projects/data";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 
-const FeaturedProjectCard = ({ project }: { project: any }) => {
+const AnimatedNumber = ({ value }: { value: number }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const display = useTransform(rounded, (latest) => latest.toString().padStart(2, "0"));
+
+  useEffect(() => {
+    const controls = animate(count, value, { duration: 1, ease: "easeOut" });
+    return controls.stop;
+  }, [value]);
+
+  return <motion.span>{display}</motion.span>;
+};
+
+const FeaturedProjectCard = ({ project, index }: { project: any; index: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { dark } = useContext(ThemeContext);
 
   return (
-    <div className="min-w-full snap-center p-1">
+    <div className="min-w-full snap-center p-1 pt-20 md:pt-24 relative"> 
+       {/* Animated Numbering - On Top of Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="absolute top-1 left-6 lg:-ml-8 md:top-1 md:left-12 z-20 pointer-events-none"
+      >
+          <h1 className="text-[3rem] md:text-[4rem] lg:text-[5rem] font-bold text-transparent leading-none select-none"
+              style={{ 
+                fontFamily: 'system-ui, sans-serif',
+                WebkitTextStroke: dark ? '1px rgba(255, 255, 255, 0.3)' : '1px rgba(0, 0, 0, 0.3)'
+              }}>
+            <AnimatedNumber value={index + 1} />
+          </h1>
+      </motion.div>
+
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -46,6 +77,8 @@ const FeaturedProjectCard = ({ project }: { project: any }) => {
               <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-white/30 text-white/80 text-xs md:text-sm font-medium mb-4 backdrop-blur-md">
                 Featured Project
               </span>
+              
+
               {/* Reduced Font Size */}
               <h3 className="text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 leading-tight tracking-tight">
                 {project.name}
@@ -120,6 +153,7 @@ const Work = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const featuredScrollContainerRef = useRef<HTMLDivElement>(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const [isFeaturedAutoScrolling, setIsFeaturedAutoScrolling] = useState(true);
   
   // Combine data
   const allProjects = [...PROJECT_DATA];
@@ -184,8 +218,34 @@ const Work = () => {
     return () => clearInterval(intervalId);
   }, [isAutoScrolling]);
 
+  // Auto Scroll Logic (Finite) for Featured Projects
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+    
+    if (isFeaturedAutoScrolling) {
+      intervalId = setInterval(() => {
+        if (featuredScrollContainerRef.current) {
+          const container = featuredScrollContainerRef.current;
+          const maxScrollLeft = container.scrollWidth - container.clientWidth;
+          
+          // Stop if we've reached the end
+          if (container.scrollLeft >= maxScrollLeft - 10) {
+            setIsFeaturedAutoScrolling(false);
+            return;
+          }
+
+          const cardWidth = container.clientWidth;
+          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }, 3000); // Scroll every 3 seconds
+    }
+
+    return () => clearInterval(intervalId);
+  }, [isFeaturedAutoScrolling]);
+
   // Pause on interaction
   const handleInteractionStart = () => setIsAutoScrolling(false);
+  const handleFeaturedInteractionStart = () => setIsFeaturedAutoScrolling(false);
 
   return (
     <Element name="projects" className="w-full py-20 overflow-hidden">
@@ -239,10 +299,42 @@ const Work = () => {
           ref={featuredScrollContainerRef}
           className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar rounded-[2.5rem]"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseEnter={handleFeaturedInteractionStart}
+          onTouchStart={handleFeaturedInteractionStart}
         >
           {featuredProjects.map((project, index) => (
-            <FeaturedProjectCard key={`featured-${index}`} project={project} />
+            <FeaturedProjectCard key={`featured-${index}`} project={project} index={index} />
           ))}
+        </div>
+
+        {/* Mobile Navigation for Featured (Visible only on small screens) */}
+        <div className="flex md:hidden justify-center gap-4 mt-8">
+          <button
+            onClick={() => {
+              handleFeaturedInteractionStart();
+              scrollPrevFeatured();
+            }}
+            className={`p-3 rounded-full border ${
+              dark 
+                ? "border-white/20 text-white" 
+                : "border-black/20 text-black"
+            }`}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => {
+              handleFeaturedInteractionStart();
+              scrollNextFeatured();
+            }}
+            className={`p-3 rounded-full border ${
+              dark 
+                ? "border-white/20 text-white" 
+                : "border-black/20 text-black"
+            }`}
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
 
