@@ -1,15 +1,16 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, lazy, Suspense } from "react";
 import { ThemeContext } from "./provider/theme.provider";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero";
 import About from "./components/About/About";
-import Skills from "./components/Skills/Skills";
-import Work from "./components/Work/Work";
-import Articles from "./components/Articles/Articles";
-import GetIntouch from "./components/GetinTouch";
 import Footer from "./components/Footer/Footer";
 import Lenis from "lenis";
+
+const Skills = lazy(() => import("./components/Skills/Skills"));
+const Work = lazy(() => import("./components/Work/Work"));
+const Articles = lazy(() => import("./components/Articles/Articles"));
+const GetIntouch = lazy(() => import("./components/GetinTouch"));
 
 function App() {
   const { dark } = useContext(ThemeContext);
@@ -43,10 +44,12 @@ function App() {
       >
         <Hero />
         <About />
-        <Skills />
-        <Work />
-        <Articles />
-        <GetIntouch />
+        <Suspense fallback={<div className="w-full min-h-[400px]" />}>
+          <Skills />
+          <Work />
+          <Articles />
+          <GetIntouch />
+        </Suspense>
         <Footer />
       </main>
     </>
