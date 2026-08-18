@@ -3,7 +3,7 @@ import { ThemeContext } from "../../provider/theme.provider";
 import { Element } from "react-scroll";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import { PROJECT_DATA, FEATURE_WORK } from "../Projects/data";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const count = useMotionValue(0);
@@ -20,7 +20,24 @@ const AnimatedNumber = ({ value }: { value: number }) => {
 
 const FeaturedProjectCard = ({ project, index }: { project: any; index: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { dark } = useContext(ThemeContext);
+
+  const imagesList = Array.isArray(project.images) && project.images.length > 0
+    ? project.images
+    : project.image
+      ? [project.image]
+      : [];
+
+  useEffect(() => {
+    if (imagesList.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % imagesList.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [imagesList.length]);
+
+  const isMobileApp = Boolean(project.images && project.images.length > 1);
 
   return (
     <div className="min-w-full snap-center p-1 pt-20 md:pt-24 relative"> 
@@ -46,28 +63,102 @@ const FeaturedProjectCard = ({ project, index }: { project: any; index: number }
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full relative overflow-hidden rounded-[2.5rem] h-[60vh] min-h-[500px] group"
+        className="w-full relative overflow-hidden rounded-[2.5rem] h-[60vh] min-h-[500px] group bg-zinc-950 border border-white/10"
       >
-        {/* Background Image with Parallax Scale */}
-        <div className="absolute inset-0 w-full h-full">
-            {project.image ? (
-              <motion.img 
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                src={typeof project.image === 'string' ? project.image : project.image.src} 
-                alt={project.name}
-                className="w-full h-full object-cover"
+        {/* Background Image / Contained Image Container */}
+        {isMobileApp ? (
+          /* Split / Contained Layout for Mobile App Screenshots with Dynamic Radial Glow derived from active image */
+          <div className="absolute inset-0 w-full h-full flex flex-col md:flex-row overflow-hidden">
+            {/* Dynamic Blurred Background Image (extracts vibrant colors directly from the active screen image) */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={`bg-${currentImageIndex}`}
+                  initial={{ opacity: 0, scale: 1.4 }}
+                  animate={{ opacity: 0.65, scale: 1.5 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  src={typeof imagesList[currentImageIndex] === 'string' ? imagesList[currentImageIndex] : imagesList[currentImageIndex].src}
+                  alt=""
+                  className="w-full h-full object-cover blur-3xl saturate-150 transform-gpu origin-center"
+                />
+              </AnimatePresence>
+
+              {/* Dynamic Radial Gradient Spotlight Overlay */}
+              <div 
+                className="absolute inset-0 z-10" 
+                style={{
+                  background: 'radial-gradient(circle at 70% 50%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,0.98) 100%)'
+                }}
               />
+            </div>
+            
+            {/* Image Preview Container - Enlarged on right side */}
+            <div className="absolute inset-0 md:left-1/4 md:w-3/4 h-full flex items-center justify-center md:justify-end md:pr-12 lg:pr-24 p-3 md:p-4 z-10 opacity-80 md:opacity-100">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentImageIndex}
+                  initial={{ opacity: 0, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1.1 }}
+                  exit={{ opacity: 0, scale: 1 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  src={typeof imagesList[currentImageIndex] === 'string' ? imagesList[currentImageIndex] : imagesList[currentImageIndex].src} 
+                  alt={`${project.name} screen ${currentImageIndex + 1}`}
+                  className="max-h-[90%] md:max-h-[95%] max-w-full object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.8)] origin-center z-10"
+                />
+              </AnimatePresence>
+
+              {/* Multiple Screen Indicators */}
+              {imagesList.length > 1 && (
+                <div className="absolute top-6 right-6 z-30 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/20">
+                  <span className="text-white/80 text-xs font-mono mr-1">
+                    {currentImageIndex + 1}/{imagesList.length}
+                  </span>
+                  {imagesList.map((_: any, imgIdx: number) => (
+                    <button
+                      key={imgIdx}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex(imgIdx);
+                      }}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        imgIdx === currentImageIndex 
+                          ? "w-6 bg-white" 
+                          : "w-2 bg-white/40 hover:bg-white/70"
+                      }`}
+                      aria-label={`Go to screen ${imgIdx + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Gradient Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none" />
+          </div>
+        ) : (
+          /* Standard Full-Bleed Layout for Web Apps */
+          <div className="absolute inset-0 w-full h-full">
+            {imagesList.length > 0 ? (
+              <div className="relative w-full h-full">
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  src={typeof imagesList[0] === 'string' ? imagesList[0] : imagesList[0].src} 
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             ) : (
               <div className="w-full h-full bg-zinc-900" />
             )}
-            {/* Dark Overlay Gradient - Lighter */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-        </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent pointer-events-none" />
+          </div>
+        )}
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 z-10">
-          <div className="max-w-4xl">
+        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 z-20 pointer-events-none">
+          <div className="max-w-xl md:max-w-2xl pointer-events-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -115,14 +206,14 @@ const FeaturedProjectCard = ({ project, index }: { project: any; index: number }
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-6"
+              className="flex flex-wrap gap-3 md:gap-6"
             >
               {project.live && (
                 <a 
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn relative px-8 py-3 bg-white text-black text-base font-medium rounded-full overflow-hidden transition-all hover:scale-105"
+                  className="group/btn relative px-6 py-2.5 md:px-8 md:py-3 bg-white text-black text-sm md:text-base font-medium rounded-full overflow-hidden transition-all hover:scale-105"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     View Site <ArrowUpRight size={18} />
@@ -130,12 +221,32 @@ const FeaturedProjectCard = ({ project, index }: { project: any; index: number }
                   <div className="absolute inset-0 bg-gray-200 transform scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-500" />
                 </a>
               )}
+              {project.ios && (
+                <a 
+                  href={project.ios}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 md:px-8 md:py-3 border border-white/30 text-white text-sm md:text-base font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-sm hover:border-white flex items-center gap-2"
+                >
+                  iOS App <ArrowUpRight size={18} />
+                </a>
+              )}
+              {project.android && (
+                <a 
+                  href={project.android}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 md:px-8 md:py-3 border border-white/30 text-white text-sm md:text-base font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-sm hover:border-white flex items-center gap-2"
+                >
+                  Android App <ArrowUpRight size={18} />
+                </a>
+              )}
               {project.github && (
                 <a 
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 border border-white/30 text-white text-base font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-sm hover:border-white"
+                  className="px-6 py-2.5 md:px-8 md:py-3 border border-white/30 text-white text-sm md:text-base font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-sm hover:border-white"
                 >
                   GitHub
                 </a>
@@ -153,18 +264,28 @@ const Work = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const featuredScrollContainerRef = useRef<HTMLDivElement>(null);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-  const [isFeaturedAutoScrolling, setIsFeaturedAutoScrolling] = useState(true);
   
   // Combine data
   const allProjects = [...PROJECT_DATA];
   const featuredProjects = [...FEATURE_WORK];
 
-  // Featured Scroll Handlers
+  // Ensure Featured Work always starts at Card 1 (01 - Kinnected) on load
+  useEffect(() => {
+    if (featuredScrollContainerRef.current) {
+      featuredScrollContainerRef.current.scrollLeft = 0;
+    }
+  }, []);
+
+  // Featured Scroll Handlers (Fast, smooth, wrap-around navigation)
   const scrollPrevFeatured = () => {
     if (featuredScrollContainerRef.current) {
       const container = featuredScrollContainerRef.current;
       const cardWidth = container.clientWidth;
-      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      if (container.scrollLeft <= 10) {
+        container.scrollTo({ left: container.scrollWidth - cardWidth, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      }
     }
   };
 
@@ -172,7 +293,12 @@ const Work = () => {
     if (featuredScrollContainerRef.current) {
       const container = featuredScrollContainerRef.current;
       const cardWidth = container.clientWidth;
-      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      const maxScrollLeft = container.scrollWidth - cardWidth;
+      if (container.scrollLeft >= maxScrollLeft - 10) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      }
     }
   };
 
@@ -203,7 +329,6 @@ const Work = () => {
           const container = scrollContainerRef.current;
           const maxScrollLeft = container.scrollWidth - container.clientWidth;
           
-          // Stop if we've reached the end (allow a small buffer for float precision)
           if (container.scrollLeft >= maxScrollLeft - 10) {
             setIsAutoScrolling(false);
             return;
@@ -212,40 +337,13 @@ const Work = () => {
           const cardWidth = container.querySelector('div')?.clientWidth || 0;
           container.scrollBy({ left: cardWidth, behavior: 'smooth' });
         }
-      }, 3000); // Scroll every 3 seconds
+      }, 3000);
     }
 
     return () => clearInterval(intervalId);
   }, [isAutoScrolling]);
 
-  // Auto Scroll Logic (Finite) for Featured Projects
-  useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-    
-    if (isFeaturedAutoScrolling) {
-      intervalId = setInterval(() => {
-        if (featuredScrollContainerRef.current) {
-          const container = featuredScrollContainerRef.current;
-          const maxScrollLeft = container.scrollWidth - container.clientWidth;
-          
-          // Stop if we've reached the end
-          if (container.scrollLeft >= maxScrollLeft - 10) {
-            setIsFeaturedAutoScrolling(false);
-            return;
-          }
-
-          const cardWidth = container.clientWidth;
-          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        }
-      }, 3000); // Scroll every 3 seconds
-    }
-
-    return () => clearInterval(intervalId);
-  }, [isFeaturedAutoScrolling]);
-
-  // Pause on interaction
   const handleInteractionStart = () => setIsAutoScrolling(false);
-  const handleFeaturedInteractionStart = () => setIsFeaturedAutoScrolling(false);
 
   return (
     <Element name="projects" className="w-full py-20 overflow-hidden">
@@ -297,10 +395,12 @@ const Work = () => {
         {/* Featured Scroll Container */}
         <div 
           ref={featuredScrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar rounded-[2.5rem]"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          onMouseEnter={handleFeaturedInteractionStart}
-          onTouchStart={handleFeaturedInteractionStart}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar rounded-[2.5rem] touch-pan-x"
+          style={{ 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch' 
+          }}
         >
           {featuredProjects.map((project, index) => (
             <FeaturedProjectCard key={`featured-${index}`} project={project} index={index} />
@@ -310,10 +410,7 @@ const Work = () => {
         {/* Mobile Navigation for Featured (Visible only on small screens) */}
         <div className="flex md:hidden justify-center gap-4 mt-8">
           <button
-            onClick={() => {
-              handleFeaturedInteractionStart();
-              scrollPrevFeatured();
-            }}
+            onClick={scrollPrevFeatured}
             className={`p-3 rounded-full border ${
               dark 
                 ? "border-white/20 text-white" 
@@ -323,10 +420,7 @@ const Work = () => {
             <ChevronLeft size={20} />
           </button>
           <button
-            onClick={() => {
-              handleFeaturedInteractionStart();
-              scrollNextFeatured();
-            }}
+            onClick={scrollNextFeatured}
             className={`p-3 rounded-full border ${
               dark 
                 ? "border-white/20 text-white" 
