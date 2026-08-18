@@ -82,7 +82,8 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setOpenSidenav(!openSidenav)}
-          className="md:hidden z-50 focus:outline-none"
+          aria-label="Toggle navigation menu"
+          className="md:hidden z-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-current rounded-md p-1"
         >
           <div className={`w-6 h-0.5 mb-1.5 transition-all ${dark ? "bg-white" : "bg-black"} ${openSidenav ? "rotate-45 translate-y-2" : ""}`} />
           <div className={`w-6 h-0.5 mb-1.5 transition-all ${dark ? "bg-white" : "bg-black"} ${openSidenav ? "opacity-0" : ""}`} />
