@@ -6,6 +6,11 @@ import Mindflash from "../../assets/images/mindflash.png";
 import Gemini from "../../assets/images/gemini.png";
 import Envirotrust from '../../assets/images/envirotrust.png'
 import Outfitted from '../../assets/images/outfitted.jpg'
+import Kinnected1 from '../../assets/images/kinnected/1.png'
+import Kinnected2 from '../../assets/images/kinnected/2.png'
+import Kinnected3 from '../../assets/images/kinnected/3.png'
+import Kinnected4 from '../../assets/images/kinnected/4.png'
+import Kinnected5 from '../../assets/images/kinnected/5.png'
 
 export const PROJECT_DATA = [
   {
@@ -90,6 +95,17 @@ export const PROJECT_DATA = [
 
 
 export const FEATURE_WORK = [
+  {
+    name: "Kinnected",
+    description: "Kinnected is a private family social platform designed to help families stay connected, share life moments, and preserve memories in a secure digital space. Developed and shipped cross-platform mobile features using React Native and TypeScript across iOS and Android. Implemented Firebase Authentication, Cloud Messaging (FCM), push notifications, and real-time user workflows to improve engagement and reliability. Built reusable UI components, scalable architecture, and backend integrations while managing mobile release workflows including TestFlight distributions.",
+    github: "",
+    live: "https://www.kinnected.xyz/",
+    ios: "https://apps.apple.com/pk/app/kinnected-app/id6758304487",
+    android: "https://play.google.com/store/apps/details?id=fam.kinnected.app&hl=en",
+    image: Kinnected1,
+    images: [Kinnected1, Kinnected2, Kinnected3, Kinnected4, Kinnected5],
+    color: "",
+  },
   {
     name: "Envirotrust",
     description: "This is a weather-insights web application for EnviroTrust, making environmental risks visible, understandable, and actionable.It turns complex climate data floods, heatwaves, wildfires into clear, interactive maps. The platform helps users make informed decisions with accessible, science-based insights. It empowers people, protects investments, and supports climate-resilient communities.",
