@@ -27,7 +27,6 @@ const SKILLS_DATA = [
   { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase", size: 50 },
   { name: "Git", icon: "https://cdn.simpleicons.org/git", size: 45 },
   { name: "Docker", icon: "https://cdn.simpleicons.org/docker", size: 50 },
-  { name: "OpenAI", icon: "https://cdn.simpleicons.org/openai", size: 45 },
   { name: "Framer", icon: "https://cdn.simpleicons.org/framer", size: 45 },
   { name: "Jest", icon: "https://cdn.simpleicons.org/jest", size: 45 },
 ];
