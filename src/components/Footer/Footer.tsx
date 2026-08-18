@@ -5,7 +5,7 @@ import "./Footer.css";
 
 const Footer = () => {
   const { dark } = useContext(ThemeContext);
-
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className={`w-full px-6 md:px-20 py-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 ${dark ? "bg-black" : "bg-white"}`}>
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
         </Link>
         <div className={`text-sm mt-4 md:hidden ${dark ? "text-gray-500" : "text-gray-400"}`}>
-          © 2025 Eboreime ThankGod
+          © {currentYear} Eboreime ThankGod
         </div>
       </div>
 
@@ -51,7 +51,7 @@ const Footer = () => {
 
         {/* Copyright Desktop */}
         <div className={`hidden md:block text-sm ${dark ? "text-gray-500" : "text-gray-400"}`}>
-          © 2025 Eboreime ThankGod
+          © {currentYear} Eboreime ThankGod
         </div>
       </div>
     </div>
