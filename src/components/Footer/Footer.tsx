@@ -32,9 +32,8 @@ const Footer = () => {
         {/* Social Links */}
           <div className="flex flex-wrap gap-6 md:gap-8">
             {[
-              { name: "Resume", link: "https://drive.google.com/file/d/1dEYa0ynrWga8hRoI7D5YLHw2TMEthwJV/view?usp=sharing" },
               { name: "GitHub", link: "https://github.com/Tk-brainCodes" },
-              { name: "LinkedIn", link: "https://www.linkedin.com/in/thankgod-eboreime-34864a1b1/" },
+              { name: "LinkedIn", link: "https://www.linkedin.com/in/thankgod-ikhuohon-eboreime-34864a1b1/" },
             ].map((item) => (
               <a
                 key={item.name}
