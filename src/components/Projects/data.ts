@@ -1,16 +1,16 @@
-import movie from "../../assets/images/movie-explore.png";
+import movie from "../../assets/images/movie-explore.webp";
 import discord from "../../assets/images/discord-image.svg";
-import musciMood from "../../assets/images/demo-pic.png";
-import pantryTracker from "../../assets/images/pantry.png";
-import Mindflash from "../../assets/images/mindflash.png";
-import Gemini from "../../assets/images/gemini.png";
-import Envirotrust from '../../assets/images/envirotrust.png'
-import Outfitted from '../../assets/images/outfitted.jpg'
-import Kinnected1 from '../../assets/images/kinnected/1.png'
-import Kinnected2 from '../../assets/images/kinnected/2.png'
-import Kinnected3 from '../../assets/images/kinnected/3.png'
-import Kinnected4 from '../../assets/images/kinnected/4.png'
-import Kinnected5 from '../../assets/images/kinnected/5.png'
+import musciMood from "../../assets/images/demo-pic.webp";
+import pantryTracker from "../../assets/images/pantry.webp";
+import Mindflash from "../../assets/images/mindflash.webp";
+import Gemini from "../../assets/images/gemini.webp";
+import Envirotrust from '../../assets/images/envirotrust.webp';
+import Outfitted from '../../assets/images/outfitted.webp';
+import Kinnected1 from '../../assets/images/kinnected/1.webp';
+import Kinnected2 from '../../assets/images/kinnected/2.webp';
+import Kinnected3 from '../../assets/images/kinnected/3.webp';
+import Kinnected4 from '../../assets/images/kinnected/4.webp';
+import Kinnected5 from '../../assets/images/kinnected/5.webp';
 
 export const PROJECT_DATA = [
   {
