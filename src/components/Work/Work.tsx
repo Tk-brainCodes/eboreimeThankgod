@@ -104,6 +104,8 @@ const FeaturedProjectCard = ({ project, index }: { project: any; index: number }
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   src={typeof imagesList[currentImageIndex] === 'string' ? imagesList[currentImageIndex] : imagesList[currentImageIndex].src} 
                   alt={`${project.name} screen ${currentImageIndex + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-[90%] md:max-h-[95%] max-w-full object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.8)] origin-center z-10"
                 />
               </AnimatePresence>
@@ -146,6 +148,8 @@ const FeaturedProjectCard = ({ project, index }: { project: any; index: number }
                   transition={{ duration: 1.2, ease: "easeOut" }}
                   src={typeof imagesList[0] === 'string' ? imagesList[0] : imagesList[0].src} 
                   alt={project.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
